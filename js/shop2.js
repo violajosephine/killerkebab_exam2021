@@ -86,10 +86,12 @@ function popUp(e) {
     document.querySelector("main").appendChild(copy);
     //cursor
     let cursor = document.querySelector(".bg-modal .cursor");
-    document.addEventListener("mousemove", (e) => {
-      cursor.style.left = e.pageX + "px";
-      cursor.style.top = e.pageY + "px";
-    });
+    document
+      .querySelector(".modal-content")
+      .addEventListener("mousemove", (e) => {
+        cursor.style.left = e.pageX + "px";
+        cursor.style.top = e.pageY - window.scrollY + "px";
+      });
   } else {
     const template = document.querySelector("template.modalCombo").content;
     //clone
@@ -110,7 +112,7 @@ function popUp(e) {
       .querySelector(".modal-content")
       .addEventListener("mousemove", (e) => {
         cursor.style.left = e.pageX + "px";
-        cursor.style.top = e.pageY + "px";
+        cursor.style.top = e.pageY - window.scrollY + "px";
       });
   }
 }

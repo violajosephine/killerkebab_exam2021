@@ -1,11 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Raleway:wght@100;300;400;600;900&display=swap");
 :root {
   --btnColor: rgb(140, 236, 243);
   --redKK: #e32d22;
+  --headersFont: "Chelsea Market", cursive;
+  --bodyFont: "Raleway", sans-serif;
 }
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--bodyFont);
 }
 .mainContainer {
   width: 100%;
