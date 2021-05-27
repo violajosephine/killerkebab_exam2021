@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Killer Kebab</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body class="products">
+    <div class="pageWrapper">
+      <header>
+        <div class="cart">
+          <div class="basket"></div>
+        </div>
+      </header>
+
+      <div class="main-asideWrapper">
+        <aside>
+          <div class="filter">
+            <div class="categoriesWrapper">
+              <h2>DISHES</h2>
+              <div class="categories">
+                <form id="categoryFilter">
+                  <input type="radio" name="category" id="all" value="all" />
+                  <label for="all">ALL</label>
+                  <input
+                    type="radio"
+                    name="category"
+                    id="killer"
+                    value="killer"
+                  />
+                  <label for="killer">KILLER</label>
+
+                  <input type="radio" name="category" id="side" value="side" />
+                  <label for="side">SIDES</label>
+
+                  <input
+                    type="radio"
+                    name="category"
+                    id="drink"
+                    value="drink"
+                  />
+                  <label for="drink">DRINKS</label>
+
+                  <input type="radio" name="category" id="dip" value="dip" />
+                  <label for="dip">DIP</label>
+                  <input
+                    type="radio"
+                    name="category"
+                    id="combo"
+                    value="combo"
+                  />
+                  <label for="combo">KOMBOS</label>
+                </form>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="mainContainer">
+          <main>
+            <h1 class="filterName"></h1>
+            <div class="productListContainer"></div>
+          </main>
+        </div>
+      </div>
+      <footer></footer>
+    </div>
+    <template class="productSmallCard">
+      <div class="smallCardContainer">
+        <a class="linkProduct" href="">View</a>
+
+        <article class="smallCard">
+          <div class="imageContainer">
+            <img src="" alt="" loading="lazy" />
+          </div>
+          <div class="infoProduct">
+            <div class="namePrice">
+              <h2 class="productName"></h2>
+              <p class="price"></p>
+            </div>
+            <input type="hidden" class="category" />
+          </div>
+          <button class="btn-add" type="button">Add</button>
+          <div class="cursor"></div>
+        </article>
+      </div>
+    </template>
+
+    <template class="modal">
+      <div class="bg-modal">
+        <div class="modal-content">
+          <img src="" alt="" class="modal" />
+          <h2 class="productName modal"></h2>
+          <p class="price modal"></p>
+          <div class="plus-minus">
+            <button type="button">-</button>
+            <input class="qty" type="text" value="1" />
+            <button type="button">+</button>
+          </div>
+          <button class="btn-order">Add</button>
+          <div class="cursor"></div>
+          <button class="btn-close">&#9587;</button>
+        </div>
+      </div>
+    </template>
+
+    <template class="modalCombo">
+      <div class="bg-modal">
+        <div class="modal-content">
+          <img src="" alt="" class="modal" />
+          <form action="" id="formCombo">
+            <div class="sides forma">
+              <input
+                type="radio"
+                name="side"
+                id="regularFries"
+                value="regular fries"
+              />
+              <label for="regularFries">REGULAR FRIES</label>
+
+              <input
+                type="radio"
+                name="side"
+                id="sweetPotatoes"
+                value="sweet potatoes"
+              />
+              <label for="sweetPotatoes">SWEET POTATOES</label>
+            </div>
+
+            <div class="drinks forma">
+              <input
+                type="radio"
+                name="drink"
+                id="softDrink"
+                value="soft drink"
+              />
+              <label for="softDrink">SOFT DRINK</label>
+
+              <input
+                type="radio"
+                name="drink"
+                id="homemadeLemonade"
+                value="homemade lemonade"
+              />
+              <label for="homemadeLemonade">HOMEMADE LEMONADE</label>
+
+              <input type="radio" name="drink" id="beer" value="beer" />
+              <label for="beer">BEER</label>
+            </div>
+
+            <div class="dips forma">
+              <input
+                type="radio"
+                name="dip"
+                id="mayonnaiseHarissa"
+                value="mayonnaise harissa"
+              />
+              <label for="mayonnaiseHarissa">HARISSA MAYO</label>
+
+              <input
+                type="radio"
+                name="dip"
+                id="mayonnaiseTruffle"
+                value="mayonnaise truffle"
+              />
+              <label for="mayonnaiseTruffle">TRUFFLE MAYO</label>
+
+              <input type="radio" name="dip" id="ketchup" value="ketchup" />
+              <label for="ketchup">KETCHUP</label>
+            </div>
+            <button class="btn-order">Add</button>
+            <div class="cursor"></div>
+          </form>
+
+          <button class="btn-close">&#9587;</button>
+        </div>
+      </div>
+    </template>
+
+    <footer></footer>
+    <script src="js/shop2.js"></script>
+    <!-- <script src="js/cartV02.js"></script> -->
+  </body>
+</html>

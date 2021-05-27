@@ -1,0 +1,216 @@
+:root {
+  --btnColor: rgb(140, 236, 243);
+  --redKK: #e32d22;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mainContainer {
+  width: 100%;
+  height: inherit;
+  background: url(../assets/hands.svg);
+  background-color: rgb(248, 234, 215);
+  background-size: 200px;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: 600px;
+  height: inherit;
+  min-height: 70vh;
+  padding: 0 0.5rem;
+  padding-bottom: 2rem;
+  background-color: rgba(245, 245, 245, 0.5);
+}
+
+.basket {
+  background-image: url(../assets/basket.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+.smallCard {
+  display: flex;
+  padding: 1rem 2rem;
+  gap: 2rem;
+  border-bottom: solid 2px black;
+  align-items: flex-start;
+  text-transform: capitalize;
+  position: relative;
+  background-color: whitesmoke;
+}
+
+.smallCard :is(h2, p) {
+  margin: 0;
+}
+
+.smallCard .imageContainer {
+  width: 20%;
+  min-width: 100px;
+}
+
+.imageContainer img {
+  max-width: 100%;
+}
+
+.smallCard .infoProduct {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.smallCard .namePrice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.smallCard .btn-add {
+  margin-left: auto;
+  display: block;
+  padding: 0.5rem 2rem;
+  border: none;
+  background-color: var(--btnColor);
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/*-------------popUp------------*/
+.bg-modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 600px;
+  height: 80%;
+  max-height: 600px;
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+img.modal {
+  width: 80%;
+  max-width: 350px;
+  object-fit: cover;
+}
+
+.btn-close {
+  border: none;
+  background-color: rgb(36, 35, 35);
+  color: white;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+#formCombo .forma {
+  border-bottom: solid 2px var(--redKK);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.btn-order {
+  margin: 1rem auto;
+  display: block;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border: none;
+  background-color: var(--btnColor);
+  color: white;
+  width: 50%;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+#formCombo input {
+  display: none;
+}
+#formCombo label {
+  border: solid 1px black;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 1.2rem;
+  padding: 2px 5px;
+}
+
+#formCombo input:checked + label {
+  background-color: black;
+  color: white;
+}
+
+.plus-minus {
+  display: flex;
+  border: solid 1px var(--btnColor);
+}
+
+.plus-minus button {
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: var(--btnColor);
+}
+
+input.qty {
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  width: 50px;
+  text-align: center;
+}
+
+/*-------------cursor mano-----------------*/
+.cursor {
+  display: block;
+  background-image: url(../assets/pointerHand-v2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  border-bottom: none;
+  /*transition: position 0.2s;*/
+  /* transform: translate(-50%, -50%); */
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+
+.btn-order:hover {
+  cursor: none;
+}
+
+.btn-order:hover + .cursor {
+  display: block;
+}
+/*---------------------------------*/
