@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Raleway:wght@100;300;400;600;900&display=swap");
 :root {
   --btnColor: rgb(140, 236, 243);
-  --redKK: #e32d22;
+  --redKK: #ad3919;
+  --tahini: #f5f3e6;
+  --brass: #eeb755;
   --headersFont: "Chelsea Market", cursive;
   --bodyFont: "Raleway", sans-serif;
 }
@@ -11,9 +13,16 @@ body {
   box-sizing: border-box;
   font-family: var(--bodyFont);
 }
+
 .mainContainer {
   width: 100%;
-  height: inherit;
+
+  height: 100vh;
+}
+
+main {
+  width: 100%;
+
   background: url(../assets/hands.svg);
   background-color: rgb(248, 234, 215);
   background-size: 200px;
@@ -22,14 +31,13 @@ body {
   justify-content: center;
 }
 
-main {
+.products {
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   height: inherit;
   min-height: 70vh;
   padding: 0 0.5rem;
   padding-bottom: 2rem;
-  background-color: rgba(245, 245, 245, 0.5);
 }
 
 .basket {
@@ -38,58 +46,88 @@ main {
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
+  margin-left: 80vw;
 }
 
-.smallCard {
-  display: flex;
-  padding: 1rem 2rem;
-  gap: 2rem;
-  border-bottom: solid 2px black;
-  align-items: flex-start;
-  text-transform: capitalize;
+.smallCard .btn-add {
+  margin-left: auto;
+  display: block;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  pointer-events: auto;
+}
+
+/*----------nuevo css-----*/
+
+.marginTop + .marginTop {
+  margin-top: calc(1rem + 2vw);
+}
+
+.smallCardContainer {
+  width: 100%;
   position: relative;
-  background-color: whitesmoke;
+  background-color: var(--tahini);
 }
 
 .smallCard :is(h2, p) {
   margin: 0;
 }
 
-.smallCard .imageContainer {
-  width: 20%;
-  min-width: 100px;
+.smallCard :is(h2, h3) {
+  font-family: var(--headersFont);
+  color: var(--redKK);
+  text-transform: uppercase;
+  font-size: calc(1rem + 1vw);
 }
 
-.imageContainer img {
-  max-width: 100%;
-}
-
-.smallCard .infoProduct {
-  width: 60%;
+.checkmark {
+  background-color: rgba(64, 224, 208, 0.37);
+  width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.smallCard {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.infoImg {
+  display: flex;
+}
+
+.imgSmallCard {
+  width: 200px;
+  object-fit: cover;
+}
+
+.infoProduct {
+  padding-left: 2vw;
+}
+
+.infoProduct p {
+  margin-top: 1rem;
+}
+
+.priceAdd {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-}
-
-.smallCard .namePrice {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
   justify-content: space-between;
+  min-width: 12%;
+  max-width: 100px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
-.smallCard .btn-add {
-  margin-left: auto;
-  display: block;
-  padding: 0.5rem 2rem;
-  border: none;
-  background-color: var(--btnColor);
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  cursor: pointer;
-}
+/*-----------------------------*/
 
 /*-------------popUp------------*/
 .bg-modal {
@@ -194,7 +232,8 @@ input.qty {
 }
 
 /*-------------cursor mano-----------------*/
-.cursor {
+.cursor,
+.cursorMain {
   display: block;
   background-image: url(../assets/pointerHand-v2.svg);
   background-size: contain;
@@ -214,7 +253,50 @@ input.qty {
   cursor: none;
 }
 
+.btn-add {
+  cursor: none;
+}
+
 .btn-order:hover + .cursor {
   display: block;
 }
+
 /*---------------------------------*/
+
+@media only screen and (max-width: 600px) {
+  /*-----smallcard------*/
+
+  main h2 {
+    font-size: 18px;
+  }
+
+  main p {
+    font-size: 16px;
+  }
+
+  .smallCardContainer {
+    width: 100vw;
+    padding: 0 5px;
+  }
+
+  .smallCard {
+    max-height: 120px;
+  }
+
+  .imgSmallCard {
+    width: 25%;
+    object-fit: contain;
+  }
+
+  .infoProduct {
+    padding-left: 2vw;
+    font-size: 16px;
+    overflow: hidden;
+  }
+
+  .priceAdd {
+    font-weight: 400;
+  }
+
+  /*-----------------*/
+}

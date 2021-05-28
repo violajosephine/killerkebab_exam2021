@@ -10,12 +10,21 @@
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <meta name="robots" content="noindex, nofollow" />
   </head>
-  <body class="products">
+  <body class="productsKK">
     <div class="pageWrapper">
       <header>
-        <div class="cart">
-          <div class="basket"></div>
+        <!---start dropdown cart---->
+        <div class="cart basket">
+          <h3>Shopping Cart</h3>
+          <form>
+            <div class="cart-content">
+              <h4>THE CART IS EMPTY</h4>
+            </div>
+            <!-- .END .cart-content-->
+            <button id="checkout-pay" type="button">CHECKOUT & PAY</button>
+          </form>
         </div>
+        <!---end dropdown cart---->
       </header>
 
       <div class="main-asideWrapper">
@@ -62,30 +71,66 @@
         </aside>
         <div class="mainContainer">
           <main>
-            <h1 class="filterName"></h1>
-            <div class="productListContainer"></div>
+            <div class="products">
+              <h1 class="filterName"></h1>
+              <div class="productListContainer">
+                <div class="cursorMain"></div>
+              </div>
+            </div>
           </main>
         </div>
       </div>
       <footer></footer>
     </div>
-    <template class="productSmallCard">
-      <div class="smallCardContainer">
-        <a class="linkProduct" href="">View</a>
 
+    <!-- <template >
+      <div class="smallCardContainer marginTop">
+        <div class="checkmark"></div>
         <article class="smallCard">
           <div class="imageContainer">
             <img src="" alt="" loading="lazy" />
           </div>
           <div class="infoProduct">
-            <div class="namePrice">
-              <h2 class="productName"></h2>
-              <p class="price"></p>
-            </div>
-            <input type="hidden" class="category" />
+            <h2 class="productName"></h2>
+            <div class="description"></div>
           </div>
-          <button class="btn-add" type="button">Add</button>
-          <div class="cursor"></div>
+          <div class="priceAdd">
+            <p class="price"></p>
+            <button class="btn-add" type="button">
+              <img src="assets/plus.svg" alt="plus sign" />
+            </button>
+            <div class="cursor"></div>
+          </div>
+          <input type="hidden" class="category" />
+        </article>
+      </div>
+    </template> -->
+
+    <template class="productSmallCard">
+      <div class="smallCardContainer marginTop">
+        <div class="checkmark"></div>
+        <article class="smallCard">
+          <div class="infoImg">
+            <img
+              class="imgSmallCard"
+              src="https://michgonzalez.com/killerKebab/side.webp"
+              alt=""
+              loading="lazy"
+            />
+
+            <div class="infoProduct">
+              <h2 class="productName">Kebab</h2>
+            </div>
+          </div>
+          <div class="priceAdd">
+            <input type="hidden" class="category" />
+            <input type="hidden" class="input-image" />
+            <p class="price">79. kr</p>
+            <button class="btn-add" type="button">
+              <img src="assets/plus.svg" alt="plus sign" />
+            </button>
+          </div>
+          <input type="hidden" class="category" />
         </article>
       </div>
     </template>
@@ -95,6 +140,7 @@
         <div class="modal-content">
           <img src="" alt="" class="modal" />
           <h2 class="productName modal"></h2>
+          <div class="drinkOption"></div>
           <p class="price modal"></p>
           <div class="plus-minus">
             <button type="button">-</button>
@@ -178,6 +224,29 @@
 
           <button class="btn-close">&#9587;</button>
         </div>
+      </div>
+    </template>
+
+    <template class="soft-drinks">
+      <label for="softDrinkList">Soft Drink:</label>
+      <select name="softDrinkList" id="softDrinkList">
+        <option>--</option>
+        <option value="coke">Coke</option>
+        <option value="coke zero">Coke Zero</option>
+        <option value="sparkling water">Sparkling Water</option>
+      </select>
+    </template>
+
+    <template id="cart-item-template">
+      <div class="cart-item">
+        <label for="fid-">NAME</label>
+        <div class="plus-minus">
+          <button class="minus" type="button">-</button>
+          <input type="number" name="NAME-" id="fid-" min="0" max="20" />
+          <button class="plus" type="button">+</button>
+        </div>
+        <p class="price-row">DKK<span></span></p>
+        <p class="price-each">DKK<span></span> each</p>
       </div>
     </template>
 
