@@ -40,6 +40,12 @@ main {
   padding-bottom: 2rem;
 }
 
+.filterName {
+  font-family: var(--headersFont);
+  color: var(--redKK);
+  font-size: calc(2rem + 1vw);
+}
+
 .basket {
   background-image: url(../assets/basket.svg);
   background-size: contain;
@@ -49,13 +55,19 @@ main {
   margin-left: 80vw;
 }
 
-.smallCard .btn-add {
-  margin-left: auto;
+.btn-add {
   display: block;
-  padding: 1rem;
+  width: 50px;
+  height: 50px;
   border: none;
+  background-image: url(../assets/plus.svg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: transparent;
   pointer-events: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*----------nuevo css-----*/
@@ -81,15 +93,40 @@ main {
   font-size: calc(1rem + 1vw);
 }
 
+.combo h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 .checkmark {
-  background-color: rgba(64, 224, 208, 0.37);
+  background-image: url(../assets/handPerfect.svg);
+  background-color: var(--redKK);
+  background-size: 15%;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
+  opacity: 0;
   display: none;
+}
+
+.orderGood {
+  display: block;
+  animation: checkmark 1s ease-in-out 1;
+}
+
+@keyframes checkmark {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 
 .smallCard {
@@ -114,6 +151,18 @@ main {
 
 .infoProduct p {
   margin-top: 1rem;
+}
+
+.drink label {
+  display: none;
+}
+.drink select {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  border: none;
+}
+.drink select:focus {
+  border: solid 2px var(--redKK);
 }
 
 .priceAdd {
@@ -145,15 +194,35 @@ main {
 .modal-content {
   width: 80%;
   max-width: 600px;
-  height: 80%;
-  max-height: 600px;
+  height: 90%;
+  max-height: 700px;
   color: black;
-  background-color: white;
+  background-color: var(--tahini);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
   position: relative;
+  overflow-y: scroll;
+}
+
+.modal-content :is(h1, h2) {
+  font-family: var(--headersFont);
+  color: var(--redKK);
+  text-transform: uppercase;
+  font-size: calc(1.2rem + 1vw);
+  font-weight: 400;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.modal-content h1 {
+  font-size: calc(1.5rem + 1.5vw);
+}
+
+.modal-content p {
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 img.modal {
@@ -187,8 +256,8 @@ img.modal {
   padding: 0.5rem;
   font-size: 1.5rem;
   border: none;
-  background-color: var(--btnColor);
-  color: white;
+  background-color: var(--brass);
+  color: black;
   width: 50%;
   min-width: 200px;
   cursor: pointer;
@@ -207,7 +276,7 @@ img.modal {
 
 #formCombo input:checked + label {
   background-color: black;
-  color: white;
+  color: var(--tahini);
 }
 
 .plus-minus {
@@ -262,6 +331,50 @@ input.qty {
 }
 
 /*---------------------------------*/
+
+/*---------------filter-----*/
+aside {
+  width: 250px;
+}
+.filter {
+  width: 100%;
+  background-color: var(--tahini);
+  padding: 2rem 4rem;
+  position: relative;
+}
+
+.filter h2 {
+  margin: 0;
+  font-family: var(--headersFont);
+  color: var(--redKK);
+  font-size: calc(1rem + 1vw);
+  text-align: center;
+}
+
+#categoryFilter {
+  display: flex;
+  flex-direction: column;
+}
+
+#categoryFilter input {
+  display: none;
+}
+#categoryFilter label {
+  background-color: var(--brass);
+  border: solid 1px black;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 3px 5px;
+}
+
+#categoryFilter input:checked + label {
+  background-color: black;
+  color: var(--brass);
+}
+
+/*--------------------------*/
 
 @media only screen and (max-width: 600px) {
   /*-----smallcard------*/

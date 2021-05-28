@@ -78,7 +78,7 @@ const CART = {
         // itemcopy.querySelector("h2").textContent = element.product_name;
         const id = element._id;
         const labelEl = itemcopy.querySelector("label");
-        labelEl.textContent = element.product_name;
+        labelEl.textContent = element.product;
         labelEl.setAttribute("for", "fid-" + id);
 
         const minusBtn = itemcopy.querySelector(".minus");

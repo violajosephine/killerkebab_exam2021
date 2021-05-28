@@ -1,8 +1,13 @@
 const urlParams = new URLSearchParams(window.location.search);
-const KKcategory = urlParams.get("category");
+let KKcategory = urlParams.get("category");
 let urlFetch;
+let comboPrice;
+let orderTotal;
+const extraForBeer = 10;
+let comboBeer;
 
 if ((KKcategory == "all") | !KKcategory) {
+  KKcategory = "all";
   urlFetch = `https://reicpe-9cc2.restdb.io/rest/killer-kebab-products?q={}&h={"$orderby": {"importance": 1, "product": 1}}`;
   document.querySelector(".filterName").textContent = "ALL PRODUCTS";
 } else {
@@ -10,7 +15,7 @@ if ((KKcategory == "all") | !KKcategory) {
   let headLine = KKcategory + "s";
   document.querySelector(".filterName").textContent = headLine.toUpperCase();
 }
-
+document.querySelector(`input[value=${KKcategory}]`).checked = true;
 let cursorMain = document.querySelector(".cursorMain");
 
 //eventListeners
@@ -53,82 +58,89 @@ function showProductList(products) {
     //adjust stuff
 
     copy.querySelector("h2").textContent = product.product;
-    copy.querySelector(".price").textContent = `${product.price} kr.`;
-
+    copy.querySelector(".price").textContent = product.price;
     copy.querySelector("img").src = product.image;
     copy.querySelector("img").alt = product.product;
     copy.querySelector(".input-image").value = product.image;
     copy.querySelector(".category").value = product.category;
-    if ((product.category == "combo") | (product.product == "soft drink")) {
-      copy.querySelector(".btn-add").addEventListener("click", popUp);
+
+    if (product.description) {
+      copy.querySelector(".infoProduct").innerHTML += product.description;
     }
-    copy.querySelector(".infoProduct").innerHTML += product.description;
+    if (product.category == "combo") {
+      copy.querySelector(".btn-add").addEventListener("click", popUp);
+      copy.querySelector(".infoProduct").classList.add(product.category);
+      comboPrice = Number(product.price);
+      console.log(comboPrice);
+    }
+    if (product.product == "soft drink") {
+      copy.querySelector(".infoProduct").classList.add(product.category);
+      const template2 = document.querySelector(".soft-drinks").content;
+      template2.cloneNode(true);
+      copy.querySelector(".infoProduct").appendChild(template2);
+      copy.querySelector("#softDrinkList").addEventListener("change", soda);
+    }
+    btnEl = copy.querySelector(".btn-add");
+    btnEl.dataset.id += product._id;
+    if (product.product != "soft drink") {
+      btnEl.addEventListener("click", () => {
+        // alert("hey");
+        console.log(product);
+        CART.add(product);
+      });
+      btnEl.addEventListener("click", checkOrder);
+    }
     //append
     document.querySelector(".productListContainer").appendChild(copy);
   });
+  // document.querySelector("#softDrinkList").addEventListener("change", soda);
   cursorHand();
 }
 
+function soda() {
+  let btnSoda =
+    this.parentElement.parentElement.parentElement.querySelector(".btn-add");
+  console.log(btnSoda.dataset.id);
+  btnSoda.addEventListener("click", () => {
+    CART.add(product);
+  });
+  btnSoda.addEventListener("click", checkOrder);
+}
+
+function checkOrder() {
+  let ordered = this.parentElement.querySelector(".checkmark");
+  ordered.classList.add("orderGood");
+  ordered.addEventListener("animationend", cleanAnimation);
+}
+
+function cleanAnimation() {
+  this.classList.remove("orderGood");
+}
+
 function popUp(e) {
-  // let productCategory =
-  //   this.parentElement.querySelector(".productName").textContent;
-  // console.log(productCategory);
-
-  //grab the template
-  // if (this.parentElement.querySelector(".category").value != "combo") {
-  //   console.log("no es un combo");
-  //   console.log(this.parentElement);
-
-  //   const template = document.querySelector("template.modal").content;
-  //   //clone
-  //   const copy = template.cloneNode(true);
-  //   //adjust stuff
-  //   copy.querySelector("h2.modal").textContent =
-  //     this.parentElement.querySelector("h2").textContent;
-  //   copy.querySelector("p.modal").textContent =
-  //     this.parentElement.querySelector(".price").textContent;
-  //   copy.querySelector("img.modal").src =
-  //     this.parentElement.querySelector("img").src;
-  //   copy.querySelector("img.modal").alt =
-  //     this.parentElement.querySelector("img").alt;
-  //   copy.querySelector(".btn-close").addEventListener("click", closeModal);
-
-  //   //append
-  //   document.querySelector("main").appendChild(copy);
-
-  //   //cursor
-  //   let cursor = document.querySelector(".bg-modal .cursor");
-  //   document
-  //     .querySelector(".modal-content")
-  //     .addEventListener("mousemove", (e) => {
-  //       cursor.style.left = e.pageX + "px";
-  //       cursor.style.top = e.pageY - window.scrollY + "px";
-  //     });
-
-  //   //soft drink option
-
-  // if (productCategory == "soft drink") {
-  //   document.querySelector(
-  //     ".drinkOption"
-  //   ).innerHTML = `<label for="softDrinkList">Soft Drink:</label>
-  //  <select name="softDrinkList" id="softDrinkList">
-  //    <option>--</option>
-  //    <option value="coke">Coke</option>
-  //    <option value="coke zero">Coke Zero</option>
-  //    <option value="sparkling water">Sparkling Water</option>
-  //  </select>`;
-  // }
+  comboBeer = comboPrice + extraForBeer;
   const template = document.querySelector("template.modalCombo").content;
   //clone
   const copy = template.cloneNode(true);
   //adjust stuff
-  copy.querySelector("img.modal").src =
-    this.parentElement.querySelector(".input-image").value;
 
-  copy.querySelector("img.modal").style.maxHeight = "150px";
-  copy.querySelector(".btn-close").addEventListener("click", closeModal);
+  copy.querySelector(".price").textContent =
+    this.parentElement.querySelector(".price").textContent;
+  copy
+    .querySelector(".bg-modal .btn-close")
+    .addEventListener("click", closeModal);
   //append
   document.querySelector("main").appendChild(copy);
+
+  document.querySelector("#formCombo").addEventListener("change", (e) => {
+    const radioBtn = document.querySelector("#beer");
+    const price = document.querySelector("#formCombo .price");
+    if (radioBtn.checked) {
+      price.textContent = comboBeer;
+    } else {
+      price.textContent = comboPrice;
+    }
+  });
 
   //cursor
   let cursor = document.querySelector(".bg-modal .cursor");
@@ -151,27 +163,14 @@ function cursorHand() {
   });
 
   document.querySelectorAll(".btn-add").forEach((card) => {
-    console.log("hola");
     card.addEventListener("mouseover", (e) => {
       cursorMain.style.display = "block";
     });
   });
 
   document.querySelectorAll(".btn-add").forEach((card) => {
-    console.log("hola");
     card.addEventListener("mouseout", (e) => {
       cursorMain.style.display = "none";
     });
   });
 }
-
-//cursor pointer
-
-// const cursors = document.querySelector(".cursor");
-// cursors.forEach((cursor) =>
-//   cursor.addEventListener("mousemove", (e) => {
-//     console.log(e);
-//     cursor.style.left = e.pageX + "px";
-//     cursor.style.top = e.pageY + "px";
-//   })
-// );
