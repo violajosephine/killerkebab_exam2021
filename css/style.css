@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* GENERAL SETTINGS */
+:root {
+  --kkRed: #ad3919;
+  --kkTahini: #eeb755;
+  --kkBg: #f5f3e6;
+  --primaryFont: "Chelsea Market", cursive;
+  --secondaryFont: "Raleway", sans-serif;
+  --thirdFont: "Courier Prime", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER SETTINGS */
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--kkRed);
+  z-index: 100;
+  padding: 2em 4em;
+}
+
+.hidden {
+  display: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #000;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #fff;
+  font-family: var(--secondaryFont);
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: var(--kkTahini);
+  font-weight: 600;
+}
+
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #482ff7;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 7.8rem;
+    flex-direction: column;
+    background-color: var(--kkBg);
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 2em 0;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    background-color: var(--kkTahini);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .hamburger .first {
+    margin-top: 19px;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-link {
+    color: #000;
+    background-color: var(--kkTahini);
+    padding: 0.5em 1.2em;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    font-weight: 700;
+    color: #000;
+  }
+}
