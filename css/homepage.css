@@ -1,7 +1,4 @@
-.hero img {
-  width: 100%;
-}
-
+/* GENERAL */
 button {
   font-family: var(--secondaryFont);
   color: #000;
@@ -12,6 +9,19 @@ button {
   text-transform: uppercase;
   font-size: 1.5em;
   cursor: pointer;
+}
+
+h1 {
+  font-family: var(--primaryFont);
+  font-size: 2.5em;
+  color: var(--kkRed);
+  margin: 1.5em 0;
+  text-transform: uppercase;
+}
+
+/* FIRST SECTION */
+.hero img {
+  width: 100%;
 }
 
 .options {
@@ -27,6 +37,8 @@ button {
   margin-top: 2em;
 }
 
+/* OUR STORY */
+
 .vibe {
   display: flex;
   flex-direction: column;
@@ -35,18 +47,12 @@ button {
   padding: 0 10em;
 }
 
-.vibe h1 {
-  font-family: var(--primaryFont);
-  font-size: 2.5em;
-  color: var(--kkRed);
-  margin: 1.5em 0;
-}
-
 .vibe p {
   margin-top: 1.2em;
   font-family: var(--secondaryFont);
-  width: 50%;
-  line-height: 2;
+  width: 90%;
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
 .vibeWrapper {
@@ -63,11 +69,29 @@ button {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  width: 100%;
 }
 
 .ulv,
 .adam {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4em;
+}
+
+.ulv q,
+.adam q {
+  margin-top: 1em;
+  font-family: var(--thirdFont);
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+.ulv p,
+.adam p {
+  width: 100%;
+  margin-top: 0.3em;
 }
 
 .quotes img {
@@ -75,6 +99,94 @@ button {
   height: 170px;
   border-radius: 100%;
 }
+
+/* SPOTIFY */
+
+.spotifyBanner {
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  color: #fff;
+  font-family: var(--thirdFont);
+  text-transform: uppercase;
+  font-size: 1.6em;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 0;
+  text-align: center;
+}
+
+.spotifyBanner p {
+  margin-left: 1em;
+}
+
+.spotifyBanner a {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* OUR BEER */
+
+.collaborator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10em;
+}
+
+.beerText {
+  margin-left: 3em;
+}
+
+.beerText p {
+  width: 60%;
+  font-family: var(--secondaryFont);
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.collaborator h2 {
+  font-family: var(--primaryFont);
+  color: var(--kkRed);
+  font-size: 2em;
+  margin-bottom: 0.4em;
+}
+
+/* DIFFERENT */
+
+.different {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10em;
+  margin: 3em 0;
+}
+
+.articlesWrapper {
+  display: flex;
+}
+
+.articlesWrapper article {
+  width: 60%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.articlesWrapper article p {
+  max-width: 30ch;
+  text-align: center;
+  margin-top: 0.5em;
+}
+.articlesWrapper article img {
+  width: 60%;
+  margin-bottom: 1em;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 768px) {
@@ -82,5 +194,63 @@ button {
     right: 0;
     margin: auto;
     width: 100%;
+  }
+  .vibe {
+    margin-top: 10em;
+    padding: 0ex;
+  }
+  .vibeWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .story {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .story img {
+    width: 100%;
+  }
+
+  .story p {
+  }
+
+  .quotes {
+    margin-top: 5em;
+  }
+
+  .spotifyBanner {
+    font-size: 1.1em;
+  }
+
+  .collaborator {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 3em;
+  }
+
+  .collaborator h2 {
+    margin-top: 2em;
+  }
+
+  .collaborator p {
+    width: 100%;
+  }
+
+  .beerText {
+    margin-left: 1em;
+  }
+
+  .articlesWrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .articlesWrapper article {
+    width: 100%;
+    margin-bottom: 3em;
   }
 }
