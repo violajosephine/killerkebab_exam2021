@@ -5,6 +5,8 @@ let KKcategory = urlParams.get("category");
 let urlFetch;
 let comboPrice;
 let comboBeer;
+let allProducts;
+let comboI = 1;
 
 //eventListeners
 window.addEventListener("load", fetchProductList);
@@ -14,9 +16,12 @@ document
 
 // document.querySelector("#cartForm").addEventListener("change", calculateTotal);
 
-/*------------------------------------------------*/
+if (cartLenght > 3) {
+  console.log("cartLeng>3");
+  calculateTotal();
+}
 
-categories.forEach(creatSec);
+/*------------------------------------------------*/
 
 function creatSec(category) {
   //creating parent div for diferents categories of food
@@ -36,11 +41,14 @@ function creatSec(category) {
 if ((KKcategory == "all") | !KKcategory) {
   KKcategory = "all";
   urlFetch = `https://reicpe-9cc2.restdb.io/rest/killer-kebab-products?q={}&h={"$orderby": {"importance": 1, "product": 1}}`;
-  document.querySelector(".filterName").textContent = "ALL PRODUCTS";
+  document.querySelector(".filterName").textContent = "PRODUCTS";
+  categories.forEach(creatSec);
+  allProducts = true;
 } else {
   urlFetch = `https://reicpe-9cc2.restdb.io/rest/killer-kebab-products?q={"category": "${KKcategory}"}`;
   let headLine = KKcategory + "s";
   document.querySelector(".filterName").textContent = headLine.toUpperCase();
+  allProducts = false;
 }
 /*--------------------------------*/
 
@@ -61,7 +69,7 @@ function fetchProductList() {
   })
     .then((res) => res.json())
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       showProductList(response);
     })
     .catch((err) => {
@@ -71,6 +79,7 @@ function fetchProductList() {
 
 /*-----------------------------------*/
 function fetchProductFilter(e) {
+  let parent;
   const categoryValue = e.target.value;
   location.href = `products.html?category=${categoryValue}`;
 }
@@ -96,47 +105,53 @@ function showProductList(products) {
     if (product.description) {
       copy.querySelector(".infoProduct").innerHTML += product.description;
     }
-    if (product.category == "combo") {
-      copy.querySelector(".btn-add").addEventListener("click", popUp);
-      copy.querySelector(".infoProduct").classList.add(product.category);
-      comboPrice = Number(product.price);
-      console.log(comboPrice);
-    }
-    if (product.product == "soft drink") {
-      copy.querySelector(".infoProduct").classList.add(product.category);
-      const template2 = document.querySelector(".soft-drinks").content;
-      template2.cloneNode(true);
-      copy.querySelector(".infoProduct").appendChild(template2);
-      copy.querySelector("#softDrinkList").addEventListener("change", soda);
-    }
+
     btnEl = copy.querySelector(".btn-add");
-    btnEl.dataset.id += product._id;
+
+    btnEl.dataset.id = product._id;
+
     btnEl.addEventListener("click", () => {
-      // alert("hey");
-      console.log(product);
+      // console.log(product);
       CART.add(product);
     });
 
     btnEl.addEventListener("click", checkOrder);
     btnEl.addEventListener("click", calculateTotal);
 
-    if (product.product == "soft drink") {
-      btnEl.style.pointerEvents = "none";
-      btnEl.style.opacity = "0.5";
+    if (product.category == "combo") {
+      copy.querySelector(".btn-add").addEventListener("click", popUp);
+      copy.querySelector(".infoProduct").classList.add(product.category);
+      comboPrice = Number(product.price);
+      // console.log(comboPrice);
     }
 
-    //grab the proper parent for category
-    let productCategory = product.category;
-    let parentCategory;
-    if (productCategory == "combo") {
-      console.log(productCategory);
-      parentCategory = "#killer-kombo";
+    // working in another solution
+    // if (product.product == "soft drink") {
+    //   copy.querySelector(".infoProduct").classList.add(product.category);
+    //   const template2 = document.querySelector(".soft-drinks").content;
+    //   template2.cloneNode(true);
+    //   copy.querySelector(".infoProduct").appendChild(template2);
+    //   copy.querySelector("#softDrinkList").addEventListener("change", soda);
+    // }
+
+    // if (product.product == "soft drink") {
+    //   btnEl.style.pointerEvents = "none";
+    //   btnEl.style.opacity = "0.5";
+    // }
+
+    //grab the proper parent for
+    if (allProducts) {
+      let productCategory = product.category;
+      let parentCategory;
+      if (productCategory == "combo") {
+        parentCategory = "#killer-kombo";
+      } else {
+        parentCategory = `#${productCategory}s`;
+      }
+      parent = document.querySelector(parentCategory);
     } else {
-      console.log(productCategory);
-      parentCategory = `#${productCategory}s`;
+      parent = document.querySelector(".productListContainer");
     }
-    const parent = document.querySelector(parentCategory);
-
     //append
     parent.appendChild(copy);
   });
@@ -187,6 +202,30 @@ function cleanAnimation() {
 /*----------------------------------------*/
 
 function popUp(e) {
+  console.log(this.dataset.id);
+  let x = this.dataset.id;
+  console.log(JSON.parse(localStorage.getItem("orderKK")));
+  const bags = JSON.parse(localStorage.getItem("orderKK"));
+  const index = bags.findIndex((bag) => bag._id == x);
+  bags[index]._id = `${x}combo${comboI}`;
+  comboI++;
+  localStorage.setItem("orderKK", []);
+  localStorage.setItem("orderKK", JSON.stringify(bags));
+
+  console.log(comboI);
+  console.log(bags);
+
+  CART.init();
+  // bags.forEach((bag) => {
+  //   if (x == bag._id) {
+  //    delete bag;
+  //     // this._id = `${x}-combo${comboI}`;
+  //     comboI++;
+
+  //   }
+
+  // });
+
   comboBeer = comboPrice + extraForBeer;
   const template = document.querySelector("template.modalCombo").content;
   //clone

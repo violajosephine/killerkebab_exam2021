@@ -1,18 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Raleway:wght@100;300;400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-  --btnColor: rgb(140, 236, 243);
-  --redKK: #ad3919;
-  --tahini: #f5f3e6;
-  --brass: #eeb755;
-  --headersFont: "Chelsea Market", cursive;
-  --bodyFont: "Raleway", sans-serif;
+  --kkRed: #ad3919;
+  --kkBg: #f5f3e6;
+  --kkTahini: #eeb755;
+  --primaryFont: "Chelsea Market", cursive;
+  --secondaryFont: "Raleway", sans-serif;
+  --thirdFont: "Courier Prime", monospace;
   --headerHight: 100px;
 }
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--bodyFont);
+  font-family: var(--secondaryFont);
 }
 
 input::-webkit-outer-spin-button,
@@ -69,8 +70,8 @@ main {
 }
 
 .filterName {
-  font-family: var(--headersFont);
-  color: var(--redKK);
+  font-family: var(--primaryFont);
+  color: var(--kkRed);
   font-size: calc(2rem + 1vw);
 }
 
@@ -98,7 +99,7 @@ main {
 .smallCardContainer {
   width: 100%;
   position: relative;
-  background-color: var(--tahini);
+  background-color: var(--kkBg);
 }
 
 .smallCard :is(h2, p) {
@@ -106,8 +107,8 @@ main {
 }
 
 .smallCard :is(h2, h3) {
-  font-family: var(--headersFont);
-  color: var(--redKK);
+  font-family: var(--primaryFont);
+  color: var(--kkRed);
   text-transform: uppercase;
   font-size: calc(1rem + 1vw);
 }
@@ -119,7 +120,7 @@ main {
 
 .checkmark {
   background-image: url(../assets/handPerfect.svg);
-  background-color: var(--redKK);
+  background-color: var(--kkRed);
   background-size: 15%;
   background-repeat: no-repeat;
   background-position: center;
@@ -181,7 +182,7 @@ main {
   border: none;
 }
 .drink select:focus {
-  border: solid 2px var(--redKK);
+  border: solid 2px var(--kkRed);
 }
 
 .priceAdd {
@@ -217,7 +218,7 @@ main {
   height: 90%;
   max-height: 700px;
   color: black;
-  background-color: var(--tahini);
+  background-color: var(--kkBg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,8 +228,8 @@ main {
 }
 
 .modal-content :is(h1, h2) {
-  font-family: var(--headersFont);
-  color: var(--redKK);
+  font-family: var(--primaryFont);
+  color: var(--kkRed);
   text-transform: uppercase;
   font-size: calc(1.2rem + 1vw);
   font-weight: 400;
@@ -264,7 +265,7 @@ img.modal {
 }
 
 #formCombo .forma {
-  border-bottom: solid 2px var(--redKK);
+  border-bottom: solid 2px var(--kkRed);
   display: flex;
   flex-direction: column;
   padding: 0.5rem 0;
@@ -276,7 +277,7 @@ img.modal {
   padding: 0.5rem;
   font-size: 1.5rem;
   border: none;
-  background-color: var(--brass);
+  background-color: var(--kkTahini);
   color: black;
   width: 50%;
   min-width: 200px;
@@ -296,12 +297,12 @@ img.modal {
 
 #formCombo input:checked + label {
   background-color: black;
-  color: var(--tahini);
+  color: var(--kkBg);
 }
 
 .bg-modal .plus-minus {
   display: flex;
-  border: solid 1px var(--brass);
+  border: solid 1px var(--kkTahini);
 }
 
 .bg-modal .plus-minus button {
@@ -309,7 +310,7 @@ img.modal {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  background-color: var(--brass);
+  background-color: var(--kkTahini);
 }
 
 .bg-modal input.qty {
@@ -358,15 +359,15 @@ aside {
 }
 .filter {
   width: 100%;
-  background-color: var(--tahini);
+  background-color: var(--kkBg);
   padding: 2rem 4rem;
   position: relative;
 }
 
 .filter h2 {
   margin: 0;
-  font-family: var(--headersFont);
-  color: var(--redKK);
+  font-family: var(--primaryFont);
+  color: var(--kkRed);
   font-size: calc(1rem + 1vw);
   text-align: center;
 }
@@ -380,7 +381,7 @@ aside {
   display: none;
 }
 #categoryFilter label {
-  background-color: var(--brass);
+  background-color: var(--kkTahini);
   border: solid 1px black;
   text-align: center;
   margin-top: 15px;
@@ -391,7 +392,7 @@ aside {
 
 #categoryFilter input:checked + label {
   background-color: black;
-  color: var(--brass);
+  color: var(--kkTahini);
 }
 
 /*--------------------------*/
@@ -400,7 +401,7 @@ aside {
 
 .cartWrapper {
   border: solid 2px black;
-  background-color: var(--tahini);
+  background-color: var(--kkBg);
   padding: 1rem;
   width: 350px;
 }
@@ -418,10 +419,10 @@ aside {
 .deletItem {
   background-color: transparent;
   border: none;
-  color: var(--redKK);
+  color: var(--kkRed);
   font-size: 2rem;
   font-weight: bolder;
-  font-family: var(--headersFont);
+  font-family: var(--primaryFont);
   cursor: pointer;
 }
 
@@ -446,7 +447,7 @@ aside {
   font-size: 1.5rem;
   text-align: center;
   cursor: pointer;
-  background-color: var(--brass);
+  background-color: var(--kkTahini);
   width: 40px;
 }
 
@@ -459,8 +460,8 @@ aside {
 }
 
 .cartWrapper h2 {
-  font-family: var(--headersFont);
-  color: var(--redKK);
+  font-family: var(--primaryFont);
+  color: var(--kkRed);
 }
 
 .basket {
@@ -480,7 +481,7 @@ aside {
   background-color: tomato;
   color: white;
   border-radius: 50%;
-  font-family: var(--bodyFont);
+  font-family: var(--secondaryFont);
   top: -10px;
   right: -10px;
   display: flex;

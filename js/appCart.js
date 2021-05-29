@@ -2,14 +2,19 @@ if (!localStorage.getItem("orderKK")) {
   localStorage.setItem("orderKK", "[]");
 }
 
+if (!localStorage.getItem("orderKillerKombo")) {
+  localStorage.setItem("orderKillerKombo", "[]");
+}
+
 let cartItems = Number(localStorage.getItem("cartItems"));
 
 let cartLenght = localStorage.getItem("orderKK").length;
 if (cartLenght < 3) {
   cartItems = 0;
+  comboI = 1;
   document.querySelector(".totalPrice").textContent = 0;
 }
-console.log(cartLenght);
+// console.log(cartLenght);
 
 document.querySelector(".cartItemsCounter").classList.add("hideCartCounter");
 
@@ -21,32 +26,10 @@ const CART = {
   init() {
     //_contents is a temporary string
     let _contents = localStorage.getItem(CART.KEY);
-    console.log(_contents);
+    // console.log(_contents);
 
     if (_contents.length == 0) {
-      CART.contents = [
-        {
-          _id: "607f216322a6f434000e601e",
-          img: "http://Kari.ca/",
-          qty: 5,
-          name: "Ut dolores",
-          price: 730,
-        },
-        {
-          _id: "2",
-          img: "nonoe",
-          qty: 3,
-          name: "Hej there",
-          price: 500,
-        },
-        {
-          _id: "3",
-          img: "nonoe",
-          qty: 2,
-          name: "Hej there",
-          price: 500,
-        },
-      ];
+      CART.contents = [];
     } else {
       {
         //if there's anything there, turn it into JS objects, that we can access with the dot . notation
@@ -141,7 +124,7 @@ const CART = {
   add(obj) {
     const index = CART.contents.findIndex((element) => element._id == obj._id);
     if (index == -1) {
-      console.log(obj);
+      // console.log(obj);
       obj.qty = 1;
       console.log(CART.contents);
       CART.contents.push(obj);
@@ -167,8 +150,8 @@ const CART = {
       // logCartCounting();
     } else {
       //we'll have to read the data from the input field
-      /* const inputEl = document.querySelector("#fid-" + obj._id);
-    CART.contents[index].qty = inputEl.valueAsNumber; */
+      // const inputEl = document.querySelector("#fid-" + obj._id);
+      // CART.contents[index].qty = inputEl.valueAsNumber;
       CART.contents[index].qty = obj.qty;
     }
 
