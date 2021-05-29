@@ -6,12 +6,40 @@
   --brass: #eeb755;
   --headersFont: "Chelsea Market", cursive;
   --bodyFont: "Raleway", sans-serif;
+  --headerHight: 100px;
 }
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--bodyFont);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+header {
+  width: 100%;
+  height: var(--headerHight);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  background-color: white;
+}
+
+.main-asidesWrapper {
+  margin-top: var(--headerHight);
 }
 
 .mainContainer {
@@ -44,15 +72,6 @@ main {
   font-family: var(--headersFont);
   color: var(--redKK);
   font-size: calc(2rem + 1vw);
-}
-
-.basket {
-  background-image: url(../assets/basket.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 50px;
-  height: 50px;
-  margin-left: 80vw;
 }
 
 .btn-add {
@@ -104,11 +123,11 @@ main {
   background-size: 15%;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -5%;
+  left: -5%;
   pointer-events: none;
   opacity: 0;
   display: none;
@@ -116,7 +135,7 @@ main {
 
 .orderGood {
   display: block;
-  animation: checkmark 1s ease-in-out 1;
+  animation: checkmark 1.2s ease-in-out 1;
 }
 
 @keyframes checkmark {
@@ -189,6 +208,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 .modal-content {
@@ -279,20 +299,20 @@ img.modal {
   color: var(--tahini);
 }
 
-.plus-minus {
+.bg-modal .plus-minus {
   display: flex;
-  border: solid 1px var(--btnColor);
+  border: solid 1px var(--brass);
 }
 
-.plus-minus button {
+.bg-modal .plus-minus button {
   border: none;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  background-color: var(--btnColor);
+  background-color: var(--brass);
 }
 
-input.qty {
+.bg-modal input.qty {
   border: none;
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
@@ -375,6 +395,104 @@ aside {
 }
 
 /*--------------------------*/
+
+/*----------------cartAside/basket-------*/
+
+.cartWrapper {
+  border: solid 2px black;
+  background-color: var(--tahini);
+  padding: 1rem;
+  width: 350px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-item + .cart-item {
+  margin-top: 1rem;
+}
+
+.deletItem {
+  background-color: transparent;
+  border: none;
+  color: var(--redKK);
+  font-size: 2rem;
+  font-weight: bolder;
+  font-family: var(--headersFont);
+  cursor: pointer;
+}
+
+.infoProductCart {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.cart-item label {
+  display: none;
+}
+
+.cartWrapper .plus-minus {
+  display: flex;
+  flex-direction: column-reverse;
+  border: none;
+}
+
+.cartWrapper .plus-minus button {
+  border: solid 1px black;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--brass);
+  width: 40px;
+}
+
+.cartWrapper input.qty {
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  width: 40px;
+  text-align: center;
+}
+
+.cartWrapper h2 {
+  font-family: var(--headersFont);
+  color: var(--redKK);
+}
+
+.basket {
+  background-image: url(../assets/bag.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-right: 5vw;
+}
+
+.cartItemsCounter {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: tomato;
+  color: white;
+  border-radius: 50%;
+  font-family: var(--bodyFont);
+  top: -10px;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hideCartCounter {
+  opacity: 0;
+}
+
+/*-----------------------*/
 
 @media only screen and (max-width: 600px) {
   /*-----smallcard------*/

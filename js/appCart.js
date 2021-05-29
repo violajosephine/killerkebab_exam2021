@@ -7,6 +7,7 @@ let cartItems = Number(localStorage.getItem("cartItems"));
 let cartLenght = localStorage.getItem("orderKK").length;
 if (cartLenght < 3) {
   cartItems = 0;
+  document.querySelector(".totalPrice").textContent = 0;
 }
 console.log(cartLenght);
 
@@ -75,7 +76,7 @@ const CART = {
 
         const tempItem = document.querySelector("#cart-item-template").content;
         const itemcopy = tempItem.cloneNode(true);
-        // itemcopy.querySelector("h2").textContent = element.product_name;
+        itemcopy.querySelector("h3").textContent = element.product;
         const id = element._id;
         const labelEl = itemcopy.querySelector("label");
         labelEl.textContent = element.product;
@@ -98,6 +99,13 @@ const CART = {
           console.log(element); */
           CART.update(element);
         });
+
+        /*------delete button---------*/
+        const deletButton = itemcopy.querySelector(".deletItem");
+        deletButton.addEventListener("click", () => {
+          CART.deleteProduct(id);
+        });
+        /*----------------------------------*/
 
         inputEl.addEventListener("focus", (e) => {
           e.target.select();
@@ -166,6 +174,17 @@ const CART = {
 
     CART.sync();
   },
+
+  deleteProduct(id) {
+    const indexObj = CART.contents.find((element) => element._id == id);
+    cartItems = cartItems - indexObj.qty;
+    indexObj.qty = indexObj.qty - indexObj.qty;
+    console.log(indexObj);
+    CART.update(indexObj);
+
+    logCartCounting();
+  },
+
   minusOne(id) {
     const indexObj = CART.contents.find((element) => element._id == id);
     indexObj.qty--;
@@ -192,6 +211,7 @@ function logCartCounting() {
     document
       .querySelector(".cartItemsCounter")
       .classList.add("hideCartCounter");
+    document.querySelector(".totalPrice").textContent = 0;
   } else {
     document.querySelector(".cartItemsCounter p").textContent = cartItems;
     localStorage.setItem("cartItems", cartItems);

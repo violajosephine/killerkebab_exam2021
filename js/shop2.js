@@ -1,11 +1,38 @@
 const urlParams = new URLSearchParams(window.location.search);
+const categories = ["killer kombo", "killers", "sides", "drinks", "dips"];
+const extraForBeer = 10;
 let KKcategory = urlParams.get("category");
 let urlFetch;
 let comboPrice;
-let orderTotal;
-const extraForBeer = 10;
 let comboBeer;
 
+//eventListeners
+window.addEventListener("load", fetchProductList);
+document
+  .querySelector("#categoryFilter")
+  .addEventListener("change", fetchProductFilter);
+
+// document.querySelector("#cartForm").addEventListener("change", calculateTotal);
+
+/*------------------------------------------------*/
+
+categories.forEach(creatSec);
+
+function creatSec(category) {
+  //creating parent div for diferents categories of food
+  const parent = document.querySelector(".productListContainer");
+  var categoryDIV = document.createElement("div");
+  categoryDIV.id = category.split(" ").join("-");
+  parent.appendChild(categoryDIV);
+  //creating head lines for the categories
+  const parentH2 = document.querySelector(`#${category.split(" ").join("-")}`);
+  var categoryH2 = document.createElement("h2");
+  categoryH2.textContent = category;
+  parentH2.appendChild(categoryH2);
+}
+/*-------------------------------------------------*/
+
+/*-------------choosing url to fetch---------*/
 if ((KKcategory == "all") | !KKcategory) {
   KKcategory = "all";
   urlFetch = `https://reicpe-9cc2.restdb.io/rest/killer-kebab-products?q={}&h={"$orderby": {"importance": 1, "product": 1}}`;
@@ -15,16 +42,16 @@ if ((KKcategory == "all") | !KKcategory) {
   let headLine = KKcategory + "s";
   document.querySelector(".filterName").textContent = headLine.toUpperCase();
 }
+/*--------------------------------*/
+
+//marking check the proper radio input "filter"
 document.querySelector(`input[value=${KKcategory}]`).checked = true;
+
+// seting the hand customize cursor
 let cursorMain = document.querySelector(".cursorMain");
 
-//eventListeners
-window.addEventListener("load", fetchProductList);
-document
-  .querySelector("#categoryFilter")
-  .addEventListener("change", fetchProductFilter);
+// fetch functions
 
-//functions
 function fetchProductList() {
   fetch(urlFetch, {
     method: "GET",
@@ -42,11 +69,13 @@ function fetchProductList() {
     });
 }
 
+/*-----------------------------------*/
 function fetchProductFilter(e) {
   const categoryValue = e.target.value;
   location.href = `products.html?category=${categoryValue}`;
 }
 
+/*-----------------------------------------*/
 function showProductList(products) {
   //header
 
@@ -82,31 +111,69 @@ function showProductList(products) {
     }
     btnEl = copy.querySelector(".btn-add");
     btnEl.dataset.id += product._id;
-    if (product.product != "soft drink") {
-      btnEl.addEventListener("click", () => {
-        // alert("hey");
-        console.log(product);
-        CART.add(product);
-      });
-      btnEl.addEventListener("click", checkOrder);
+    btnEl.addEventListener("click", () => {
+      // alert("hey");
+      console.log(product);
+      CART.add(product);
+    });
+
+    btnEl.addEventListener("click", checkOrder);
+    btnEl.addEventListener("click", calculateTotal);
+
+    if (product.product == "soft drink") {
+      btnEl.style.pointerEvents = "none";
+      btnEl.style.opacity = "0.5";
     }
+
+    //grab the proper parent for category
+    let productCategory = product.category;
+    let parentCategory;
+    if (productCategory == "combo") {
+      console.log(productCategory);
+      parentCategory = "#killer-kombo";
+    } else {
+      console.log(productCategory);
+      parentCategory = `#${productCategory}s`;
+    }
+    const parent = document.querySelector(parentCategory);
+
     //append
-    document.querySelector(".productListContainer").appendChild(copy);
+    parent.appendChild(copy);
   });
-  // document.querySelector("#softDrinkList").addEventListener("change", soda);
+
   cursorHand();
 }
 
+/*--------------------------------------------------------*/
+
+//activate the plus button for soft dirnks after chossing one
 function soda() {
   let btnSoda =
     this.parentElement.parentElement.parentElement.querySelector(".btn-add");
   console.log(btnSoda.dataset.id);
-  btnSoda.addEventListener("click", () => {
-    CART.add(product);
-  });
-  btnSoda.addEventListener("click", checkOrder);
+  btnSoda.style.pointerEvents = "auto";
+  btnSoda.style.opacity = "1";
 }
 
+//calculate cart total
+function calculateTotal() {
+  let orderTotal = 0;
+  console.log("hola dede la formA");
+  document.querySelectorAll(".price-each span").forEach((span) => {
+    orderTotal += Number(span.textContent);
+    document.querySelector(".totalPrice").textContent = orderTotal;
+  });
+  //eventlisteners to the rest of the buttons
+  document.querySelectorAll(".plus").forEach((btn) => {
+    btn.addEventListener("click", calculateTotal);
+  });
+
+  document.querySelectorAll(".minus").forEach((btn) => {
+    btn.addEventListener("click", calculateTotal);
+  });
+}
+
+//check Order animation
 function checkOrder() {
   let ordered = this.parentElement.querySelector(".checkmark");
   ordered.classList.add("orderGood");
@@ -116,6 +183,8 @@ function checkOrder() {
 function cleanAnimation() {
   this.classList.remove("orderGood");
 }
+
+/*----------------------------------------*/
 
 function popUp(e) {
   comboBeer = comboPrice + extraForBeer;
