@@ -278,6 +278,87 @@ section.menu h1 {
   text-align: right;
 }
 
+.menu a {
+  margin-top: 4em;
+}
+
+/* FIND US */
+
+.findUs {
+  background-color: var(--kkRed);
+  padding: 3em 10em;
+}
+.findUs h1 {
+  color: #fff;
+}
+.findUsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.findUsWrapper article {
+  margin-left: 2em;
+}
+.findUsWrapper h2 {
+  font-family: var(--primaryFont);
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.findUsWrapper p {
+  font-family: var(--secondaryFont);
+  color: #fff;
+  margin: 0.5em 0 1.5em 0;
+}
+
+.hashtag,
+.tunes,
+.location,
+.hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+}
+.hashtag p,
+.tunes p,
+.location p,
+.hours p {
+  width: 60%;
+  text-align: center;
+}
+.igGallery {
+  display: flex;
+}
+
+.igGallery img {
+  width: 100px;
+  margin-left: 0.5em;
+}
+
+.tunes img {
+  width: 70%;
+}
+
+.location img {
+  width: 70%;
+}
+
+.hours {
+  margin-top: 8em;
+  width: 40%;
+}
+
+.hours h4 {
+  font-family: var(--secondaryFont);
+  color: #fff;
+}
+
+.hours p {
+  font-family: var(--thirdFont);
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 768px) {
@@ -350,5 +431,32 @@ section.menu h1 {
   }
   .categoryWrapper {
     width: 100%;
+  }
+
+  section.menu {
+    padding: 3em;
+  }
+
+  .findUsWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .findUsWrapper article {
+    margin-left: 0;
+  }
+
+  .hashtag,
+  .tunes,
+  .location,
+  .hours {
+    width: 100%;
+    margin-top: 2em;
+  }
+  .hashtag p,
+  .tunes p,
+  .location p,
+  .hours p {
+    width: 90%;
   }
 }
