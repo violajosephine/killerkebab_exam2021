@@ -386,9 +386,6 @@ section.menu h1 {
     width: 100%;
   }
 
-  .story p {
-  }
-
   .quotes {
     margin-top: 5em;
   }
@@ -414,6 +411,10 @@ section.menu h1 {
 
   .beerText {
     margin-left: 1em;
+  }
+
+  .different {
+    padding: 0;
   }
 
   .articlesWrapper {
@@ -446,6 +447,10 @@ section.menu h1 {
     margin-left: 0;
   }
 
+  .igGallery img {
+    width: 140px;
+  }
+
   .hashtag,
   .tunes,
   .location,
@@ -457,6 +462,6 @@ section.menu h1 {
   .tunes p,
   .location p,
   .hours p {
-    width: 90%;
+    width: 130%;
   }
 }
