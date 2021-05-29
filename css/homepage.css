@@ -17,6 +17,7 @@ h1 {
   color: var(--kkRed);
   margin: 1.5em 0;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* FIRST SECTION */
@@ -170,21 +171,27 @@ h1 {
 
 .articlesWrapper article {
   width: 60%;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+
+.articlesWrapper article h3 {
+  margin: 1em 0 0.5em 0;
+  font-family: var(--secondaryFont);
+  font-size: 1.5em;
 }
 
 .articlesWrapper article p {
   max-width: 30ch;
   text-align: center;
-  margin-top: 0.5em;
+  font-family: var(--secondaryFont);
+  font-size: 1em;
+  line-height: 1.5;
+  width: 75%;
 }
 .articlesWrapper article img {
-  width: 60%;
-  margin-bottom: 1em;
+  width: 80%;
 }
 
 /* MEDIA QUERIES */
@@ -252,5 +259,9 @@ h1 {
   .articlesWrapper article {
     width: 100%;
     margin-bottom: 3em;
+  }
+
+  .articlesWrapper article p {
+    width: 100%;
   }
 }
