@@ -85,6 +85,10 @@ a {
 .logo {
   width: 150px;
 }
+
+.logo img {
+  width: 100%;
+}
 @media only screen and (max-width: 768px) {
   .nav-menu {
     position: fixed;

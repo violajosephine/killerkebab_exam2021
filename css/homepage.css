@@ -180,6 +180,7 @@ h1 {
   margin: 1em 0 0.5em 0;
   font-family: var(--secondaryFont);
   font-size: 1.5em;
+  text-align: center;
 }
 
 .articlesWrapper article p {
@@ -192,6 +193,89 @@ h1 {
 }
 .articlesWrapper article img {
   width: 80%;
+}
+
+/* OUR MENU */
+
+section.menu {
+  background-color: #000;
+  padding: 3em 10em 8em 10em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.menu h1 {
+  color: white;
+}
+
+.categoryWrapper {
+  width: 60%;
+  border-bottom: 1px solid #fff;
+}
+
+.menu h2 {
+  width: 55%;
+  font-family: var(--primaryFont);
+  text-transform: uppercase;
+  font-size: 2em;
+  margin: 1.5em 0 0.5em 0;
+}
+
+.collapsible {
+  background-color: #000;
+  border-bottom: 1px solid white;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  padding-bottom: 1em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-family: var(--primaryFont);
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.active,
+.collapsible:hover {
+  background-color: var(--kkTahini);
+}
+
+.content {
+  width: 100%;
+  display: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+.product {
+  margin: 2em;
+  display: flex;
+}
+.product img {
+  width: 50%;
+}
+.product p {
+  color: #000;
+  margin-left: 1em;
+  font-family: var(--secondaryFont);
+  line-height: 1.5;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text .price {
+  font-family: var(--primaryFont);
+  font-size: 1.5em;
+  text-align: right;
 }
 
 /* MEDIA QUERIES */
@@ -262,6 +346,9 @@ h1 {
   }
 
   .articlesWrapper article p {
+    width: 100%;
+  }
+  .categoryWrapper {
     width: 100%;
   }
 }
