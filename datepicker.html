@@ -11,22 +11,63 @@
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
-    <div class="date-picker">
-      <img src="assets/clock.svg" alt="" />
-      <div class="selected-date"></div>
-
-      <div class="dates">
-        <div class="month">
-          <div class="arrows prev-mth">&lt;</div>
-          <div class="mth"></div>
-          <div class="arrows next-mth">&gt;</div>
+    <div id="orderView">
+      <div class="options">
+        <div id="takeawayOptions">
+          <div id="takeawayIcon"></div>
+          <p>PICK-UP</p>
         </div>
-
-        <div class="days"></div>
+        <div id="dateTimeOptions">
+          <div id="dateIcon"></div>
+          <p>Today</p>
+          <p class="time">Soon</p>
+        </div>
+      </div>
+      <div id="optionsTakeaway" class="hidden">
+        <div class="modalWrapper">
+          <div class="optionsModal">
+            <div class="exit"><img src="/assets/exit.svg" alt="" /></div>
+            <h1>Select delivery preference</h1>
+            <a href="product.html"><button>Pick-up</button></a>
+            <a
+              href="https://wolt.com/en/dnk/lyngby-gentofte/restaurant/killerkebab"
+              ><button>Delivery</button></a
+            >
+          </div>
+        </div>
+      </div>
+      <div id="optionsDate" class="hidden">
+        <div class="modalWrapper">
+          <div class="dateModal">
+            <div class="exitDate"><img src="/assets/exit.svg" alt="" /></div>
+            <h1>When you want to pick up your order?</h1>
+            <div class="form">
+              <form id="dateForm" action="datepicker.html">
+                <label for="pickuptime">Select date and time:</label>
+                <input
+                  class="dateselection"
+                  type="date"
+                  id="pickupdate"
+                  name="pickupdate"
+                />
+                <input
+                  class="dateselection"
+                  type="time"
+                  id="pickuptime"
+                  name="pickuptime"
+                />
+                <input type="submit" class="submit" />
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <!--
+        <h1>Select your preference</h1>
 
-    <script src="main.js"></script>
+    </div> -->
+
+    <script src="/js/datepicker.js"></script>
   </body>
-  <script src="/js/datepicker.js"></script>
 </html>
