@@ -1,8 +1,16 @@
+const exit = document.querySelectorAll(".exit");
+
 document
   .querySelector("#takeawayOptions")
   .addEventListener("click", optionsModal);
 
 document.querySelector("#dateTimeOptions").addEventListener("click", dateModal);
+
+exit.forEach((n) => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+  exit.classList.remove(".active");
+}
 
 function optionsModal() {
   console.log("function optionsModal()");
