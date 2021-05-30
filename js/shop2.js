@@ -2,11 +2,15 @@ const urlParams = new URLSearchParams(window.location.search);
 const categories = ["killer kombo", "killers", "sides", "drinks", "dips"];
 const extraForBeer = 10;
 let KKcategory = urlParams.get("category");
+let comboSide = urlParams.get("side");
+let comboDrink;
+let comboDip;
 let urlFetch;
 let comboPrice;
 let comboBeer;
 let allProducts;
-let comboI = 1;
+let comboI;
+let newComboId;
 
 //eventListeners
 window.addEventListener("load", fetchProductList);
@@ -14,28 +18,12 @@ document
   .querySelector("#categoryFilter")
   .addEventListener("change", fetchProductFilter);
 
-// document.querySelector("#cartForm").addEventListener("change", calculateTotal);
+//-----------ifs---------
 
 if (cartLenght > 3) {
   console.log("cartLeng>3");
   calculateTotal();
 }
-
-/*------------------------------------------------*/
-
-function creatSec(category) {
-  //creating parent div for diferents categories of food
-  const parent = document.querySelector(".productListContainer");
-  var categoryDIV = document.createElement("div");
-  categoryDIV.id = category.split(" ").join("-");
-  parent.appendChild(categoryDIV);
-  //creating head lines for the categories
-  const parentH2 = document.querySelector(`#${category.split(" ").join("-")}`);
-  var categoryH2 = document.createElement("h2");
-  categoryH2.textContent = category;
-  parentH2.appendChild(categoryH2);
-}
-/*-------------------------------------------------*/
 
 /*-------------choosing url to fetch---------*/
 if ((KKcategory == "all") | !KKcategory) {
@@ -51,6 +39,28 @@ if ((KKcategory == "all") | !KKcategory) {
   allProducts = false;
 }
 /*--------------------------------*/
+
+if (comboSide) {
+  console.log(comboSide);
+  addComboProducts();
+}
+
+/*------------------------------------------------*/
+
+function creatSec(category) {
+  //creating parent div for diferents categories of food
+  const parent = document.querySelector(".productListContainer");
+  var categoryDIV = document.createElement("div");
+  categoryDIV.id = category.split(" ").join("-");
+  parent.appendChild(categoryDIV);
+  //creating head lines for the categories
+  const parentH2 = document.querySelector(`#${category.split(" ").join("-")}`);
+  var categoryH2 = document.createElement("h2");
+  categoryH2.classList.add("stickyH2");
+  categoryH2.textContent = category;
+  parentH2.appendChild(categoryH2);
+}
+/*-------------------------------------------------*/
 
 //marking check the proper radio input "filter"
 document.querySelector(`input[value=${KKcategory}]`).checked = true;
@@ -125,20 +135,6 @@ function showProductList(products) {
       // console.log(comboPrice);
     }
 
-    // working in another solution
-    // if (product.product == "soft drink") {
-    //   copy.querySelector(".infoProduct").classList.add(product.category);
-    //   const template2 = document.querySelector(".soft-drinks").content;
-    //   template2.cloneNode(true);
-    //   copy.querySelector(".infoProduct").appendChild(template2);
-    //   copy.querySelector("#softDrinkList").addEventListener("change", soda);
-    // }
-
-    // if (product.product == "soft drink") {
-    //   btnEl.style.pointerEvents = "none";
-    //   btnEl.style.opacity = "0.5";
-    // }
-
     //grab the proper parent for
     if (allProducts) {
       let productCategory = product.category;
@@ -204,27 +200,20 @@ function cleanAnimation() {
 function popUp(e) {
   console.log(this.dataset.id);
   let x = this.dataset.id;
+  comboI = localStorage.getItem("comboI");
+  logComboICounting();
   console.log(JSON.parse(localStorage.getItem("orderKK")));
   const bags = JSON.parse(localStorage.getItem("orderKK"));
   const index = bags.findIndex((bag) => bag._id == x);
-  bags[index]._id = `${x}combo${comboI}`;
+  newComboId = `${x}-combo${comboI}`;
+  bags[index]._id = newComboId;
   comboI++;
   localStorage.setItem("orderKK", []);
   localStorage.setItem("orderKK", JSON.stringify(bags));
-
   console.log(comboI);
   console.log(bags);
 
   CART.init();
-  // bags.forEach((bag) => {
-  //   if (x == bag._id) {
-  //    delete bag;
-  //     // this._id = `${x}-combo${comboI}`;
-  //     comboI++;
-
-  //   }
-
-  // });
 
   comboBeer = comboPrice + extraForBeer;
   const template = document.querySelector("template.modalCombo").content;
@@ -241,12 +230,15 @@ function popUp(e) {
   document.querySelector("main").appendChild(copy);
 
   document.querySelector("#formCombo").addEventListener("change", (e) => {
-    const radioBtn = document.querySelector("#beer");
+    const radioBtn = document.querySelectorAll(".beer");
     const price = document.querySelector("#formCombo .price");
-    if (radioBtn.checked) {
+    const priceInput = document.querySelector(".priceInput");
+    if (radioBtn[1].checked | radioBtn[0].checked) {
       price.textContent = comboBeer;
+      priceInput.value = comboBeer;
     } else {
       price.textContent = comboPrice;
+      priceInput.value = comboPrice;
     }
   });
 
@@ -258,6 +250,34 @@ function popUp(e) {
       cursor.style.left = e.pageX + "px";
       cursor.style.top = e.pageY - window.scrollY + "px";
     });
+
+  logComboICounting();
+}
+
+function addComboProducts() {
+  comboDrink = urlParams.get("drink");
+  comboDip = urlParams.get("dip");
+  comboP = urlParams.get("price");
+  //grab de combo
+  const orderX = JSON.parse(localStorage.getItem("orderKK"));
+  comboX = orderX[orderX.length - 1];
+  //adjust stuff
+  comboX.price = Number(comboP);
+  comboX.description = `<ul><li>${comboSide}</li><li>${comboDrink}</li><li>${comboDip}</li></ul>`;
+  //
+  localStorage.setItem("orderKK", []);
+  localStorage.setItem("orderKK", JSON.stringify(orderX));
+
+  CART.init();
+  calculateTotal();
+}
+
+function logComboICounting() {
+  if ((comboI < 1) | (comboI == null)) {
+    comboI = 1;
+  } else {
+    localStorage.setItem("comboI", comboI);
+  }
 }
 
 function closeModal() {

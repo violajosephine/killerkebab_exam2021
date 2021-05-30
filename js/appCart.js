@@ -53,13 +53,18 @@ const CART = {
     //If we have an empty array / an array with the length of 0
     if (CART.contents.length === 0) {
       cartcontentEl.innerHTML = "<h4>The cart is empty</h4>";
+      localStorage.setItem("comboI", 1);
     } else {
       CART.contents.forEach((element) => {
         // console.log(element);
-
+        //grab template
         const tempItem = document.querySelector("#cart-item-template").content;
         const itemcopy = tempItem.cloneNode(true);
+        //adjust stuff
         itemcopy.querySelector("h3").textContent = element.product;
+        if (element.category == "combo") {
+          itemcopy.querySelector(".texto div").innerHTML = element.description;
+        }
         const id = element._id;
         const labelEl = itemcopy.querySelector("label");
         labelEl.textContent = element.product;

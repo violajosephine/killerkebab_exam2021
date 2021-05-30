@@ -90,6 +90,17 @@ main {
   margin-right: auto;
 }
 
+.stickyH2 {
+  position: sticky;
+  top: var(--headerHight);
+  z-index: 2;
+  background-color: var(--kkBg);
+  text-transform: uppercase;
+  color: var(--kkRed);
+  font-family: var(--primaryFont);
+  font-weight: lighter;
+}
+
 /*----------nuevo css-----*/
 
 .marginTop + .marginTop {

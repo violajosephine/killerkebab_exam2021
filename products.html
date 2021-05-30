@@ -149,20 +149,7 @@
         <div class="modal-content">
           <h1>select your </br> preferences</h1>
           <form action="products.html?combo=true&" id="formCombo">
-            <!-- <div class="killers forma">
-              <h2>killers</h2>
-              <input
-                type="radio"
-                name="killer"
-                id="falafelCombo"
-                value="falafel"
-              />
-              <label for="falafelCombo">FALAFEL</label>
-
-              <input type="radio" name="killer" id="kebabCombo" value="kebab" />
-              <label for="kebabCombo">KEBAB</label>
-            </div> -->
-
+            
             <div class="sides forma">
               <h2>sides</h2>
               <input
@@ -184,13 +171,6 @@
 
             <div class="drinks forma">
               <h2>drinks</h2>
-              <input
-                type="radio"
-                name="drink"
-                id="softDrink"
-                value="soft drink"
-              />
-              <label for="softDrink">SOFT DRINK</label>
 
               <input
                 type="radio"
@@ -200,8 +180,35 @@
               />
               <label for="homemadeLemonade">HOMEMADE LEMONADE</label>
 
-              <input type="radio" name="drink" id="beer" value="beer" />
-              <label for="beer">BEER + 10 kr.</label>
+              <input
+                type="radio"
+                name="drink"
+                id="cocaCola"
+                value="coca-cola"
+              />
+              <label for="cocaCola">COCA-COLA</label>
+
+              <input
+                type="radio"
+                name="drink"
+                id="cocaColaZero"
+                value="coca-cola zero"
+              />
+              <label for="cocaColaZero">COCA-COLA ZERO</label>
+
+              <input
+                type="radio"
+                name="drink"
+                id="sparklingWater"
+                value="sparkling water"
+              />
+              <label for="sparklingWater">SPARKLING WATER</label>
+
+              <input class ="beer" type="radio" name="drink" id="nonAlcoholicBeer" value="non alcoholic beer" />
+              <label for="nonAlcoholicBeer">NON-ALCOHOLIC BEER + 10 kr.</label>
+
+              <input class ="beer" type="radio" name="drink" id="paleAle" value="pale ale" />
+              <label for="paleAle">PALE ALE + 10 kr.</label>
             </div>
 
             <div class="dips forma">
@@ -225,6 +232,7 @@
               <input type="radio" name="dip" id="ketchup" value="ketchup" />
               <label for="ketchup">KETCHUP</label>
             </div>
+            <input  class="priceInput" type="text" name="price" id="" value="">
             <p><span class="price"></span> kr.</p>
             <button class="btn-order">Add</button>
             <div class="cursor"></div>
@@ -251,7 +259,7 @@
           <button class="deletItem">&#10006;</button>
           <div class="texto">
           <h3>product Name</h3>
-          <p></p>
+          <div></div>
           </div>
           <p class="price-each"><span></span> kr.</p>
         </div>
