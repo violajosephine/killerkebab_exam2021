@@ -4,15 +4,325 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Killer Kebab</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
-    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/homepage.css" />
+    <title>Document</title>
   </head>
-
   <body>
-    <header>
-      <a href="products.html">TAKE A WAY</a>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html"
+            ><img
+              src="assets/logo-white.svg"
+              alt="peace sign next to written killer kebab"
+          /></a>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Takeaway</a>
+          </li>
+          <li class="nav-item">
+            <a href="#menu" class="nav-link">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#beer" class="nav-link">Beer</a>
+          </li>
+          <li class="nav-item">
+            <a href="#find" class="nav-link">Find us</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="first bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
     </header>
+    <main>
+      <section class="hero">
+        <div class="heroWrapper">
+          <img src="assets/menu.jpeg" alt="" />
+          <div class="options">
+            <a href="#"><button>Takeaway</button></a>
+            <a href="#menu"><button>Explore menu</button></a>
+
+          </div>
+
+        </div>
+        <div id="about"></div>
+      </section>
+      <section class="vibe">
+        <h1>Our Vibe</h1>
+        <div class="vibeWrapper">
+          <div class="story">
+            <img src="assets/menu.jpeg" alt="" />
+            <p>
+              Killer Kebab is a tribute to the cuisine of the Eastern
+              Mediterranean, drawing ingredients and inspiration from Tunisia,
+              Greece, Lebanon and Israel. We make everything ourselves in our
+              effort to prove that kebab can be both healthy and delicious.
+            </p>
+          </div>
+          <div class="quotes">
+              <div class="ulv">
+                <img src="assets/menu.jpeg" alt="" />
+                <q>Cool quote about Ulv</q><p>
+                     Ulv - ironic position</p>
+              </div>
+              <div class="adam">
+                <img src="assets/menu.jpeg" alt="" />
+                <q>Cool quote about Adam</q><p>
+                    Adam - ironic position</p>
+              </div>
+              </div>
+          </div>
+          <div id="beer"></div>
+        </div>
+      </section>
+      <section class="spotifyBanner">
+                   <div id="beer"></div>
+        <img src="assets/spotify.jpg" alt="" />
+        <p>Feel the vibe<br> 
+
+           <a href="#spotify"> Listen to a killer playlist</a></p>
+
+      </section>
+      <section class="collaborator">
+        <img src="assets/menu.jpeg" alt="" />
+        <div class="beerText">
+            
+            <h2>Beer made for us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+        </div>
+
+      </section>
+      <section class="different">
+        <h1>What makes us specials</h1>
+          <div class="articlesWrapper">
+              <article>
+                <img src="assets/menu.jpeg" alt="" />
+                <h3>Our crunchy falafels</h3>
+                <p>Are rustic, crunchy and absolutely packed with flavour</p>
+              </article>
+              <article>
+                <img src="assets/menu.jpeg" alt="" />
+                <h3>Our free range lamb</h3>
+                <p>Is cut, marinated and mounted by us</p>
+              </article>
+              <article>
+                <img src="assets/menu.jpeg" alt="" />
+                <h3>Our lemonade</h3>
+                <p>Are rustic, crunchy and absolutely packed with flavour.</p>
+              </article>
+              <article>
+                <img src="assets/menu.jpeg" alt="" />
+                <h3>Our bread</h3>
+                <p>Are rustic, crunchy and absolutely packed with flavour.</p>
+              </article>
+          </div>
+          <div id="menu"></div>
+      </section>
+
+      <section class="menu">
+          <h1>Our menu</h1>
+          <div class="categoryWrapper">
+          <h2>killer kombo</h2>
+          <button type="button" class="collapsible">what includes <span>&#43</span></button>
+          <div class="content">
+              <div class="product">
+                  <img src="assets/menu.jpeg" alt="" />
+                  <div class="text">
+                  <p>KEBAB or FALAFEL + FRIES + DIP + SOFT DRINK or LEMONADE</p>
+                  <p>with Killer Kebab Pale Ale (Lervig) + 10,-</p>
+                  <p class="price">125,-</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="categoryWrapper">
+        <h2>killer kebab</h2>
+        <button type="button" class="collapsible">kebab <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                <p>with pointed cabbage, red onion, flat leaf parsley, sunflower seed dukkah and our mint yogurt spread</p>
+            <p class="price">79,-</p>
+        </div>
+            </div>
+        </div>
+
+        <button type="button" class="collapsible">falafel <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                    <p>with pointed cabbage, mint, apple, celery and our own truggle mayonnaise</p>
+                <p class="price">79,-</p>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="categoryWrapper">
+        <h2>killer fries</h2>
+        <button type="button" class="collapsible">regular <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                    <p>served with our sunflower seed dukkah</p>
+                <p class="price">25,-</p>
+            </div>
+            </div>
+        </div>
+        <button type="button" class="collapsible">sweet potato <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                    <p>served with our sunflower seed dukkah</p>
+                <p class="price">30,-</p>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="categoryWrapper">
+        <h2>dips</h2>
+        <button type="button" class="collapsible">Truffle Mayonnaise <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                    <p>maybe we can add some cool info about the product</p>
+                <p class="price">10,-</p>
+            </div>
+            </div>
+        </div>
+        <button type="button" class="collapsible">Harissa Mayonnaise <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                    <p>maybe we can add some cool info about the product</p>
+                <p class="price">10,-</p>
+            </div>
+            </div>
+        </div>
+        <button type="button" class="collapsible">Ketchup <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                    <p>maybe we can add some cool info about the product</p>
+                <p class="price">10,-</p>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="categoryWrapper">
+        <h2>killer drinks</h2>
+        <button type="button" class="collapsible">Killer Kebab Pale Ale (Lervig) <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                    <p>maybe we can add some cool info about the product</p>
+                <p class="price">40,-</p>
+            </div>
+            </div>
+        </div>
+
+        <button type="button" class="collapsible">Homemade lemonade <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                    <p>maybe we can add some cool info about the product</p>
+                <p class="price">30,-</p>
+            </div>
+            </div>
+        </div>
+        <button type="button" class="collapsible">Soft drinks <span>&#43</span></button>
+        <div class="content">
+            <div class="product">
+                <img src="assets/menu.jpeg" alt="" />
+                <div class="text">
+                    <p>maybe we can add some cool info about the product</p>
+                <p class="price">30,-</p>
+            </div>
+            </div>
+        </div>
+        </div>
+        <a href="#"><button>Order now</button></a>
+        <div id="find"></div>
+      </section>
+      <section class="findUs">
+        <h1 id="spotify">Find us</h1>
+        <div class="findUsWrapper">
+        <article class="hashtag">
+            <h2>#killervibes</h2>
+            <p>Follow us @killerkebab.dk, get reposted and win an exclusive Killer Kebab pin</p>
+            <div class="igGallery">
+            <img src="assets/menu.jpeg" alt="" />
+            <img src="assets/menu.jpeg" alt="" />
+            <img src="assets/menu.jpeg" alt="" />
+            <img src="assets/menu.jpeg" alt="" />
+        </div>
+        </article>
+        <article class="tunes">
+            <h2>our tunes</h2>
+            <p>Follow us @killerkebab.dk, get reposted and win an exclusive Killer Kebab pin</p>
+            <img src="assets/menu.jpeg" alt="" />
+        </article>
+
+    
+        <article class="location">
+            <h2>location</h2>
+            <p>Follow us @killerkebab.dk, get reposted and win an exclusive Killer Kebab pin</p>
+            <img src="assets/menu.jpeg" alt="" />
+        </article>
+        <article class="hours">
+            <h4>OPENING HOURS</h4>
+            <p>Dine In or Take Away: Everyday 12-20:30</p>
+            <h4>CONTACT US</h4>
+            <p>Viktoriagade 11, sttv, 1655 København, Denmark
+                hallo@killerkebab.dk
+                30 60 53 40</p>
+        </article>
+    </div>
+      </section>
+    </main>
+    <footer>
+        <div class="footerWrapper">
+        <nav>
+       <img src="assets/logo-white.svg" class="footer_logo">
+     
+       <ul>
+           <li><a href="#">Takeaway</a></li>
+           <li><a href="#menu">Menu</a></li>
+           <li><a href="#about">About</a></li>
+           <li><a href="#beer">Beer</a></li>
+           <li><a href="#find">Find Us</a></li>
+       </ul>
+       <ul>
+         <li><a href="#">Terms and conditions</a></li>
+         <li><a href="#">Privacy policy</a></li>
+         <li><a href="#">Returns</a></li>
+         <li><a href="#">Contact us</a></li>
+     </ul>
+     </nav>
+     <ul class="footer_social_media">
+         <li><a target="_blank" href=""><img src="assets/instagram.svg" alt=""></a></li>
+         <li><a target="_blank" href=""><img src="assets/facebook.svg" alt=""></a></li>
+         <li><a target="_blank" href=""><img src="assets/map-pin.svg" alt=""></a></li>
+     </ul>
+     <p>© Copyright | Killer Kebab | Viktoriagade 11, st tv, 1655 København, Danmark | <strong>Phone:</strong> +45 30 60 53 40 | <strong>Email:</strong> hallo@killerkebab.dk</p>
+    </div>
+   </footer>
+    <script src="js/main.js"></script>
   </body>
 </html>
