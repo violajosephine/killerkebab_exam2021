@@ -24,7 +24,7 @@ header {
   top: 0;
   right: 0;
   background-color: var(--kkRed);
-  z-index: 100;
+  z-index: 80;
   padding: 2em 4em;
 }
 
