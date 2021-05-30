@@ -11,22 +11,37 @@
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
-    <div class="date-picker">
-      <img src="assets/clock.svg" alt="" />
-      <div class="selected-date"></div>
-
-      <div class="dates">
-        <div class="month">
-          <div class="arrows prev-mth">&lt;</div>
-          <div class="mth"></div>
-          <div class="arrows next-mth">&gt;</div>
+    <div id="orderView">
+      <div id="takeawayOptions">
+        <div id="takeawayIcon"></div>
+        <p>13/05</p>
+        <p>14:00</p>
+      </div>
+      <div id="optionsTakeaway" class="hidden">
+      
+        <div class="optionsModal">
+          <div class="exit"><img src="/assets/exit.svg" alt="" /></div>
+          <h1>Select your preference</h1>
+          <a href="#"><button>Pick-up</button></a>
+          <a href="#"><button>Delivery</button></a>
         </div>
-
-        <div class="days"></div>
+      </div>
       </div>
     </div>
+    <!-- <div id="takeawayOptions" class="pickUp">
+      <div id="takeawayIcon"></div>
+      <p>13/05</p>
+      <p>14:00</p>
+      <div id="optionsTakeaway" class="hidden">
+        <h1>Select your preference</h1>
+        <form action="/action_page.php">
+          <label for="birthdaytime">Birthday (date and time):</label>
+          <input type="datetime-local" id="birthdaytime" name="birthdaytime" />
+          <input type="submit" />
+        </form>
+      </div>
+    </div> -->
 
-    <script src="main.js"></script>
+    <script src="/js/datepicker.js"></script>
   </body>
-  <script src="/js/datepicker.js"></script>
 </html>
