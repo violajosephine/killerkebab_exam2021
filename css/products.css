@@ -41,6 +41,7 @@ header {
 
 .main-asidesWrapper {
   margin-top: var(--headerHight);
+  display: flex;
 }
 
 .mainContainer {

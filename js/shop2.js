@@ -302,3 +302,32 @@ function cursorHand() {
     });
   });
 }
+
+/*---------------------------------post order-------------------*/
+
+document.querySelector("#checkout-pay").addEventListener("click", postOrder);
+
+function postOrder() {
+  const payload = {
+    cart: JSON.parse(localStorage.getItem("orderKK")),
+    payed: true,
+    pickedUp: false,
+  };
+
+  fetch("https://reicpe-9cc2.restdb.io/rest/killer-kebab-orders", {
+    method: "POST",
+    headers: {
+      "x-apikey": "606d5dcef5535004310074f4",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => {
+      console.log(response);
+      localStorage.setItem("orderKK", []);
+      location.href = `products.html`;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
