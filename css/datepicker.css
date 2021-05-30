@@ -16,7 +16,8 @@ button:hover {
   font-weight: 700;
 }
 
-.exit {
+.exit,
+.exitDate {
   position: absolute;
   top: 2em;
   right: 2em;

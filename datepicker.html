@@ -19,8 +19,8 @@
         </div>
         <div id="dateTimeOptions">
           <div id="dateIcon"></div>
-          <p>13/05</p>
-          <p>14:00</p>
+          <p>Today</p>
+          <p class="time">Soon</p>
         </div>
       </div>
       <div id="optionsTakeaway" class="hidden">
@@ -39,16 +39,22 @@
       <div id="optionsDate" class="hidden">
         <div class="modalWrapper">
           <div class="dateModal">
-            <div class="exit"><img src="/assets/exit.svg" alt="" /></div>
+            <div class="exitDate"><img src="/assets/exit.svg" alt="" /></div>
             <h1>When you want to pick up your order?</h1>
             <div class="form">
-              <form action="/action_page.php">
-                <label for="birthdaytime">Select date and time:</label>
+              <form id="dateForm" action="datepicker.html">
+                <label for="pickuptime">Select date and time:</label>
                 <input
                   class="dateselection"
-                  type="datetime-local"
-                  id="birthdaytime"
-                  name="birthdaytime"
+                  type="date"
+                  id="pickupdate"
+                  name="pickupdate"
+                />
+                <input
+                  class="dateselection"
+                  type="time"
+                  id="pickuptime"
+                  name="pickuptime"
                 />
                 <input type="submit" class="submit" />
               </form>
