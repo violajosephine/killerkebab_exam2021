@@ -1,0 +1,467 @@
+/* GENERAL */
+button {
+  font-family: var(--secondaryFont);
+  color: #000;
+  background-color: var(--kkTahini);
+  padding: 0.5em 1.2em;
+  font-weight: 500;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: var(--primaryFont);
+  font-size: 2.5em;
+  color: var(--kkRed);
+  margin: 1.5em 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* FIRST SECTION */
+.hero img {
+  width: 100%;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 20em;
+  bottom: 18em;
+}
+
+.options a {
+  margin-top: 2em;
+}
+
+/* OUR STORY */
+
+.vibe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10em;
+}
+
+.vibe p {
+  margin-top: 1.2em;
+  font-family: var(--secondaryFont);
+  width: 90%;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.vibeWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.story {
+  margin-right: 6em;
+}
+
+.quotes {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ulv,
+.adam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4em;
+}
+
+.ulv q,
+.adam q {
+  margin-top: 1em;
+  font-family: var(--thirdFont);
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+.ulv p,
+.adam p {
+  width: 100%;
+  margin-top: 0.3em;
+}
+
+.quotes img {
+  width: 170px;
+  height: 170px;
+  border-radius: 100%;
+}
+
+/* SPOTIFY */
+
+.spotifyBanner {
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  color: #fff;
+  font-family: var(--thirdFont);
+  text-transform: uppercase;
+  font-size: 1.6em;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 0;
+  text-align: center;
+}
+
+.spotifyBanner p {
+  margin-left: 1em;
+}
+
+.spotifyBanner a {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* OUR BEER */
+
+.collaborator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10em;
+}
+
+.beerText {
+  margin-left: 3em;
+}
+
+.beerText p {
+  width: 60%;
+  font-family: var(--secondaryFont);
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.collaborator h2 {
+  font-family: var(--primaryFont);
+  color: var(--kkRed);
+  font-size: 2em;
+  margin-bottom: 0.4em;
+}
+
+/* DIFFERENT */
+
+.different {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10em;
+  margin: 3em 0;
+}
+
+.articlesWrapper {
+  display: flex;
+}
+
+.articlesWrapper article {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articlesWrapper article h3 {
+  margin: 1em 0 0.5em 0;
+  font-family: var(--secondaryFont);
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.articlesWrapper article p {
+  max-width: 30ch;
+  text-align: center;
+  font-family: var(--secondaryFont);
+  font-size: 1em;
+  line-height: 1.5;
+  width: 75%;
+}
+.articlesWrapper article img {
+  width: 80%;
+}
+
+/* OUR MENU */
+
+section.menu {
+  background-color: #000;
+  padding: 3em 10em 8em 10em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.menu h1 {
+  color: white;
+}
+
+.categoryWrapper {
+  width: 60%;
+  border-bottom: 1px solid #fff;
+}
+
+.menu h2 {
+  width: 55%;
+  font-family: var(--primaryFont);
+  text-transform: uppercase;
+  font-size: 2em;
+  margin: 1.5em 0 0.5em 0;
+}
+
+.collapsible {
+  background-color: #000;
+  border-bottom: 1px solid white;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  padding-bottom: 1em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-family: var(--primaryFont);
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.active,
+.collapsible:hover {
+  background-color: var(--kkTahini);
+}
+
+.content {
+  width: 100%;
+  display: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+.product {
+  margin: 2em;
+  display: flex;
+}
+.product img {
+  width: 50%;
+}
+.product p {
+  color: #000;
+  margin-left: 1em;
+  font-family: var(--secondaryFont);
+  line-height: 1.5;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text .price {
+  font-family: var(--primaryFont);
+  font-size: 1.5em;
+  text-align: right;
+}
+
+.menu a {
+  margin-top: 4em;
+}
+
+/* FIND US */
+
+.findUs {
+  background-color: var(--kkRed);
+  padding: 3em 10em;
+}
+.findUs h1 {
+  color: #fff;
+}
+.findUsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.findUsWrapper article {
+  margin-left: 2em;
+}
+.findUsWrapper h2 {
+  font-family: var(--primaryFont);
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.findUsWrapper p {
+  font-family: var(--secondaryFont);
+  color: #fff;
+  margin: 0.5em 0 1.5em 0;
+}
+
+.hashtag,
+.tunes,
+.location,
+.hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+}
+.hashtag p,
+.tunes p,
+.location p,
+.hours p {
+  width: 60%;
+  text-align: center;
+}
+.igGallery {
+  display: flex;
+}
+
+.igGallery img {
+  width: 100px;
+  margin-left: 0.5em;
+}
+
+.tunes img {
+  width: 70%;
+}
+
+.location img {
+  width: 70%;
+}
+
+.hours {
+  margin-top: 8em;
+  width: 40%;
+}
+
+.hours h4 {
+  font-family: var(--secondaryFont);
+  color: #fff;
+}
+
+.hours p {
+  font-family: var(--thirdFont);
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+  .options {
+    right: 0;
+    margin: auto;
+    width: 100%;
+  }
+  .vibe {
+    margin-top: 10em;
+    padding: 0ex;
+  }
+  .vibeWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .story {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .story img {
+    width: 100%;
+  }
+
+  .quotes {
+    margin-top: 5em;
+  }
+
+  .spotifyBanner {
+    font-size: 1.1em;
+  }
+
+  .collaborator {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 3em;
+  }
+
+  .collaborator h2 {
+    margin-top: 2em;
+  }
+
+  .collaborator p {
+    width: 100%;
+  }
+
+  .beerText {
+    margin-left: 1em;
+  }
+
+  .different {
+    padding: 0;
+  }
+
+  .articlesWrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .articlesWrapper article {
+    width: 100%;
+    margin-bottom: 3em;
+  }
+
+  .articlesWrapper article p {
+    width: 100%;
+  }
+  .categoryWrapper {
+    width: 100%;
+  }
+
+  section.menu {
+    padding: 3em;
+  }
+
+  .findUsWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .findUsWrapper article {
+    margin-left: 0;
+  }
+
+  .igGallery img {
+    width: 140px;
+  }
+
+  .hashtag,
+  .tunes,
+  .location,
+  .hours {
+    width: 100%;
+    margin-top: 2em;
+  }
+  .hashtag p,
+  .tunes p,
+  .location p,
+  .hours p {
+    width: 130%;
+  }
+}

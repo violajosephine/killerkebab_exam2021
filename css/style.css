@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* GENERAL SETTINGS */
+:root {
+  --kkRed: #ad3919;
+  --kkTahini: #eeb755;
+  --kkBg: #f5f3e6;
+  --primaryFont: "Chelsea Market", cursive;
+  --secondaryFont: "Raleway", sans-serif;
+  --thirdFont: "Courier Prime", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER SETTINGS */
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--kkRed);
+  z-index: 100;
+  padding: 2em 4em;
+}
+
+.hidden {
+  display: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #000;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #fff;
+  font-family: var(--secondaryFont);
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: var(--kkTahini);
+  font-weight: 600;
+}
+.logo {
+  width: 150px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  background-color: #000000;
+  width: 100%;
+  font-family: var(--secondaryFont);
+  z-index: 100;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+
+.footerWrapper {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: initial;
+}
+
+.footer_submit a {
+  color: #717171;
+}
+.newsletter input {
+  margin: 1em 0;
+}
+
+.newsletter button {
+  padding: 0.4em 1em;
+}
+footer nav {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 2em;
+  justify-content: space-around;
+  border-top: #999999 solid 1px;
+  border-bottom: #999999 solid 1px;
+  padding: 30px;
+}
+
+footer ul {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+footer h4 {
+  font-size: 1.2rem;
+}
+
+.footer_logo {
+  width: 200px;
+  margin-bottom: 2em;
+  fill: white;
+}
+
+footer p {
+  text-align: center;
+  margin: auto;
+  margin-top: 1em;
+  display: inline;
+  color: #999999;
+}
+
+.footer_social_media {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 2em;
+  justify-content: space-around;
+}
+
+footer img {
+  width: 50px;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 7.8rem;
+    flex-direction: column;
+    background-color: var(--kkBg);
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 2em 0;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    background-color: var(--kkTahini);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .hamburger .first {
+    margin-top: 19px;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-link {
+    color: #000;
+    background-color: var(--kkTahini);
+    padding: 0.5em 1.2em;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    font-weight: 700;
+    color: #000;
+  }
+
+  footer nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer ul {
+    text-align: center;
+  }
+
+  footer p {
+    width: 50%;
+    line-height: 1.5;
+  }
+}
