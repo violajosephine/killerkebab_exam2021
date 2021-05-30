@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Killer Kebab</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/homepage.css" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
-    <meta name="robots" content="noindex, nofollow" />
+    <title>Document</title>
   </head>
   <body>
     <div class="loader">
@@ -18,10 +16,11 @@
       type="image/svg+xml"
     ></object>
     </div>
+
     <header class="header">
       <nav class="navbar">
         <div class="logo">
-          <a href="homepage.html"
+          <a href="index.html"
             ><img
               src="assets/logo-white.svg"
               alt="peace sign next to written killer kebab"
@@ -32,16 +31,16 @@
             <a href="#" class="nav-link">Takeaway</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Menu</a>
+            <a href="#menu" class="nav-link">Menu</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">About</a>
+            <a href="#about" class="nav-link">About</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Beer</a>
+            <a href="#beer" class="nav-link">Beer</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Find us</a>
+            <a href="#find" class="nav-link">Find us</a>
           </li>
         </ul>
         <div class="hamburger">
@@ -57,9 +56,12 @@
           <img src="assets/menu.jpeg" alt="" />
           <div class="options">
             <a href="#"><button>Takeaway</button></a>
-            <a href="#"><button>Explore menu</button></a>
+            <a href="#menu"><button>Explore menu</button></a>
+
           </div>
+
         </div>
+        <div id="about"></div>
       </section>
       <section class="vibe">
         <h1>Our Vibe</h1>
@@ -86,12 +88,16 @@
               </div>
               </div>
           </div>
+          <div id="beer"></div>
         </div>
       </section>
       <section class="spotifyBanner">
+                   <div id="beer"></div>
         <img src="assets/spotify.jpg" alt="" />
         <p>Feel the vibe<br> 
-           <a href=""> Listen to a killer playlist</a></p>
+
+           <a href="#spotify"> Listen to a killer playlist</a></p>
+
       </section>
       <section class="collaborator">
         <img src="assets/menu.jpeg" alt="" />
@@ -126,7 +132,9 @@
                 <p>Are rustic, crunchy and absolutely packed with flavour.</p>
               </article>
           </div>
+          <div id="menu"></div>
       </section>
+
       <section class="menu">
           <h1>Our menu</h1>
           <div class="categoryWrapper">
@@ -258,9 +266,10 @@
         </div>
         </div>
         <a href="#"><button>Order now</button></a>
+        <div id="find"></div>
       </section>
       <section class="findUs">
-        <h1>Find us</h1>
+        <h1 id="spotify">Find us</h1>
         <div class="findUsWrapper">
         <article class="hashtag">
             <h2>#killervibes</h2>
@@ -302,10 +311,10 @@
      
        <ul>
            <li><a href="#">Takeaway</a></li>
-           <li><a href="#">Menu</a></li>
-           <li><a href="#">About</a></li>
-           <li><a href="#">Beer</a></li>
-           <li><a href="#">Find Us</a></li>
+           <li><a href="#menu">Menu</a></li>
+           <li><a href="#about">About</a></li>
+           <li><a href="#beer">Beer</a></li>
+           <li><a href="#find">Find Us</a></li>
        </ul>
        <ul>
          <li><a href="#">Terms and conditions</a></li>
