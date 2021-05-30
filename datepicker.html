@@ -6,23 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Killer Kebab</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/homepage.css" />
+    <link rel="stylesheet" href="css/datepicker.css" />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
-    <div class="coc-form">
-      <div class="coc-block-row">
-        <label class="coc-block-label" for="dateofbirth">Date Of Birth</label>
-        <div class="coc-block">
-          <input
-            class="coc-input"
-            type="date"
-            name="dateofbirth"
-            id="dateofbirth"
-          />
+    <div class="date-picker">
+      <img src="assets/clock.svg" alt="" />
+      <div class="selected-date"></div>
+
+      <div class="dates">
+        <div class="month">
+          <div class="arrows prev-mth">&lt;</div>
+          <div class="mth"></div>
+          <div class="arrows next-mth">&gt;</div>
         </div>
+
+        <div class="days"></div>
       </div>
     </div>
+
+    <script src="main.js"></script>
   </body>
+  <script src="/js/datepicker.js"></script>
 </html>
