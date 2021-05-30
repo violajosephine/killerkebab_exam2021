@@ -1,3 +1,8 @@
+window.addEventListener("load", function () {
+  const loader = document.querySelector(".loader");
+  console.log(loader);
+  loader.className += " hidden";
+});
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navLink = document.querySelectorAll(".nav-link");
