@@ -12,34 +12,50 @@
   </head>
   <body>
     <div id="orderView">
-      <div id="takeawayOptions">
-        <div id="takeawayIcon"></div>
-        <p>13/05</p>
-        <p>14:00</p>
+      <div class="options">
+        <div id="takeawayOptions">
+          <div id="takeawayIcon"></div>
+          <p>PICK-UP</p>
+        </div>
+        <div id="dateTimeOptions">
+          <div id="dateIcon"></div>
+          <p>13/05</p>
+          <p>14:00</p>
+        </div>
       </div>
       <div id="optionsTakeaway" class="hidden">
-      
         <div class="optionsModal">
           <div class="exit"><img src="/assets/exit.svg" alt="" /></div>
           <h1>Select your preference</h1>
-          <a href="#"><button>Pick-up</button></a>
-          <a href="#"><button>Delivery</button></a>
+          <a href="product.html"><button>Pick-up</button></a>
+          <a
+            href="https://wolt.com/en/dnk/lyngby-gentofte/restaurant/killerkebab"
+            ><button>Delivery</button></a
+          >
         </div>
       </div>
+      <div id="optionsDate" class="hidden">
+        <div class="dateModal">
+          <div class="exit"><img src="/assets/exit.svg" alt="" /></div>
+          <h1>When you want to pick up your order?</h1>
+          <div class="form">
+            <form action="/action_page.php">
+              <label for="birthdaytime">Select date and time:</label>
+              <input
+                class="dateselection"
+                type="datetime-local"
+                id="birthdaytime"
+                name="birthdaytime"
+              />
+              <input type="submit" class="submit" />
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- <div id="takeawayOptions" class="pickUp">
-      <div id="takeawayIcon"></div>
-      <p>13/05</p>
-      <p>14:00</p>
-      <div id="optionsTakeaway" class="hidden">
+    <!--
         <h1>Select your preference</h1>
-        <form action="/action_page.php">
-          <label for="birthdaytime">Birthday (date and time):</label>
-          <input type="datetime-local" id="birthdaytime" name="birthdaytime" />
-          <input type="submit" />
-        </form>
-      </div>
+
     </div> -->
 
     <script src="/js/datepicker.js"></script>

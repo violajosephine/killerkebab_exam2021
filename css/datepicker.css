@@ -13,7 +13,7 @@ button {
 }
 
 button:hover {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .exit {
@@ -31,28 +31,54 @@ h1 {
   color: var(--kkRed);
   font-family: var(--primaryFont);
   margin-bottom: 1.5em;
+  width: 80%;
+  text-align: center;
+}
+
+p {
+  font-family: var(--secondaryFont);
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  padding: 3em;
+  align-items: flex-start;
+}
+.options > div {
+  margin-left: 2em;
 }
 
 #takeawayIcon {
+  background-image: url(/assets/loader.svg);
+  background-size: cover;
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+}
+
+#dateIcon {
   background-image: url(/assets/clock.svg);
   background-size: cover;
   width: 3vw;
   height: 3vw;
   cursor: pointer;
+  margin-bottom: 0.5em;
 }
 
-#optionsTakeaway {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.418);
+#takeawayOptions,
+#dateTimeOptions {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.optionsModal {
-  position: relative;
+.optionsModal,
+.dateModal {
+  position: absolute;
   width: 40%;
   background: var(--kkBg);
   display: flex;
@@ -60,4 +86,38 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 3em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-family: var(--secondaryFont);
+  margin-bottom: 1em;
+}
+
+.dateselection {
+  margin-bottom: 1em;
+}
+
+input[type="datetime-local" i] {
+  font-family: var(--secondaryFont);
+  height: 40px;
+  padding: 1em;
+  font-size: 1em;
+}
+
+input[type="submit" i] {
+  background-color: var(--kkTahini);
+  height: 40px;
+  font-family: var(--secondaryFont);
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  font-size: 1.1em;
+}
+input[type="submit" i]:hover {
+  font-weight: 700;
 }
