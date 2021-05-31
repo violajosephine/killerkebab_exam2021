@@ -11,12 +11,14 @@ let comboBeer;
 let allProducts;
 let comboI;
 let newComboId;
+let customerRock;
 
 //eventListeners
 window.addEventListener("load", fetchProductList);
 document
   .querySelector("#categoryFilter")
   .addEventListener("change", fetchProductFilter);
+document.querySelector("#checkout-pay").addEventListener("click", popUpInfo);
 
 //-----------ifs---------
 
@@ -129,7 +131,7 @@ function showProductList(products) {
     btnEl.addEventListener("click", calculateTotal);
 
     if (product.category == "combo") {
-      copy.querySelector(".btn-add").addEventListener("click", popUp);
+      copy.querySelector(".btn-add").addEventListener("click", popUpKombo);
       copy.querySelector(".infoProduct").classList.add(product.category);
       comboPrice = Number(product.price);
       // console.log(comboPrice);
@@ -197,7 +199,7 @@ function cleanAnimation() {
 
 /*----------------------------------------*/
 
-function popUp(e) {
+function popUpKombo(e) {
   console.log(this.dataset.id);
   let x = this.dataset.id;
   comboI = localStorage.getItem("comboI");
@@ -254,6 +256,48 @@ function popUp(e) {
   logComboICounting();
 }
 
+function popUpInfo() {
+  const template = document.querySelector("template.info-payment").content;
+  //clone
+  const copy = template.cloneNode(true);
+  //adjust stuff
+  copy
+    .querySelector(".bg-modal .btn-close")
+    .addEventListener("click", closeModal);
+  copy
+    .querySelector("#personalData .backBtn")
+    .addEventListener("click", closeModal);
+  copy
+    .querySelector("#personalData .nextBtn")
+    .addEventListener("click", slidder);
+  copy.querySelector("#CreditCard .backBtn").addEventListener("click", slidder);
+
+  //append
+  document.querySelector("main").appendChild(copy);
+}
+
+function slidder() {
+  console.log("slidder");
+  customer = document.querySelector("#name").value;
+  customerRock = customer.split(" ")[0];
+  document.querySelector(".customerName").textContent = customerRock;
+  document.querySelector("#nameCC").value = customer;
+  document.querySelector(".formsWrapper").classList.toggle("slide");
+  document.querySelector("#nextBtnCC").addEventListener("click", popUPyouRock);
+}
+
+function popUPyouRock() {
+  const template = document.querySelector("template.youRock").content;
+  //clone
+  const copy = template.cloneNode(true);
+  //adjust stuff
+  copy.querySelector(".name").textContent = customerRock;
+  copy.querySelector(".black .nextBtn").addEventListener("click", postOrder);
+
+  //append
+  document.querySelector("main").appendChild(copy);
+}
+
 function addComboProducts() {
   comboDrink = urlParams.get("drink");
   comboDip = urlParams.get("dip");
@@ -305,9 +349,8 @@ function cursorHand() {
 
 /*---------------------------------post order-------------------*/
 
-document.querySelector("#checkout-pay").addEventListener("click", postOrder);
-
 function postOrder() {
+  console.log("postOrder");
   const payload = {
     cart: JSON.parse(localStorage.getItem("orderKK")),
     payed: true,
@@ -325,7 +368,7 @@ function postOrder() {
     .then((response) => {
       console.log(response);
       localStorage.setItem("orderKK", []);
-      location.href = `products.html`;
+      location.href = `index.html`;
     })
     .catch((err) => {
       console.error(err);
