@@ -43,7 +43,6 @@
             <div id="basketInfo">
             <div class="basket">
               <div class="cartItemsCounter"><p></p></div>  
-              
             </div>
             <p>DKK 0</p> 
           </div>
@@ -122,12 +121,11 @@
               <p class="time">SOON</p>
             </div>
             <div id="basketInfo">
-            <div class="basket">
-              <div class="cartItemsCounter"><p></p></div>  
-              
+              <div class="basket">
+                <div class="cartItemsCounter"><p></p></div>  
+              </div>
+              <p>DKK 0</p> 
             </div>
-            <p>DKK 0</p> 
-          </div>
           </div>
           <div id="optionsTakeaway" class="hidden">
             <div class="modalWrapper">
@@ -242,7 +240,7 @@
             <div class="total">
               <p>Total: <span class="totalPrice"></span> kr.</p>
             </div>
-            <button id="checkout-pay" type="button">CHECKOUT & PAY</button>
+            <button id="checkout-pay" type="button">CHECKOUT</button>
           </form>
           
           <!---end dropdown cart---->
@@ -272,7 +270,7 @@
           <div class="priceAdd">
             <input type="hidden" class="category" />
             <input type="hidden" class="input-image" />
-            <p><span class="price modal"></span> kr.</p>
+            <p class="priceWrapper"><span class="price modal"></span> kr.</p>
             <button class="btn-add" type="button" data-id="1"> 
               <!-- <img src="assets/plus.svg" alt="plus sign" /> -->
             </button>
@@ -414,7 +412,7 @@
     <template id="cart-item-template">
       <div class="cart-item">
         <div class="infoProductCart">
-          <button class="deletItem">&#10006;</button>
+          <button class="deletItem"><img src="/assets/exit.svg" alt=""></button>
           <div class="texto">
           <h3>product Name</h3>
           <div></div>
@@ -431,7 +429,35 @@
       </div>
     </template>
 
-    <footer></footer>
+
+    <footer>
+      <div class="footerWrapper">
+      <nav>
+        <a href="index.html"><img src="assets/logo-white.svg" class="footer_logo"></a>
+     
+   
+     <ul>
+         <li><a href="#">Takeaway</a></li>
+         <li><a href="index.html#menu">Menu</a></li>
+         <li><a href="index.html#about">About</a></li>
+         <li><a href="index.html#beer">Beer</a></li>
+         <li><a href="index.html#find">Find Us</a></li>
+     </ul>
+     <ul>
+       <li><a href="#">Terms and conditions</a></li>
+       <li><a href="#">Privacy policy</a></li>
+       <li><a href="#">Returns</a></li>
+       <li><a href="#">Contact us</a></li>
+   </ul>
+   </nav>
+   <ul class="footer_social_media">
+       <li><a target="_blank" href=""><img src="assets/instagram.svg" alt=""></a></li>
+       <li><a target="_blank" href=""><img src="assets/facebook.svg" alt=""></a></li>
+       <li><a target="_blank" href=""><img src="assets/map-pin.svg" alt=""></a></li>
+   </ul>
+   <p>© Copyright | Killer Kebab | Viktoriagade 11, st tv, 1655 København, Danmark | <strong>Phone:</strong> +45 30 60 53 40 | <strong>Email:</strong> hallo@killerkebab.dk</p>
+  </div>
+ </footer>
     <script src="js/appCart.js"></script>
     <script src="js/shop2.js"></script>
     <script src="js/datepicker.js"></script>
