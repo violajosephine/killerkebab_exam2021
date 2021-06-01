@@ -12,7 +12,9 @@ let cartLenght = localStorage.getItem("orderKK").length;
 if (cartLenght < 3) {
   cartItems = 0;
   comboI = 1;
-  document.querySelector(".totalPrice").textContent = 0;
+  document.querySelectorAll(".totalPrice").forEach((total) => {
+    total.textContent = 0;
+  });
 }
 // console.log(cartLenght);
 
@@ -207,7 +209,10 @@ function logCartCounting() {
     document
       .querySelector(".mobileHeader .cartItemsCounter")
       .classList.add("hideCartCounter");
-    document.querySelector(".totalPrice").textContent = 0;
+
+    document.querySelectorAll(".totalPrice").forEach((total) => {
+      total.textContent = 0;
+    });
   } else {
     document.querySelector(".desktopHeader .cartItemsCounter p").textContent =
       cartItems;

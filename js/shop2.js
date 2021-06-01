@@ -187,7 +187,9 @@ function calculateTotal() {
   console.log("hola dede la formA");
   document.querySelectorAll(".price-each span").forEach((span) => {
     orderTotal += Number(span.textContent);
-    document.querySelector(".totalPrice").textContent = orderTotal;
+    document.querySelectorAll(".totalPrice").forEach((total) => {
+      total.textContent = orderTotal;
+    });
   });
   //eventlisteners to the rest of the buttons
   document.querySelectorAll(".plus").forEach((btn) => {
