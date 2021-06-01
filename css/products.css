@@ -149,7 +149,8 @@ main {
   position: sticky;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  top: var(--headerHight);
+  top: 5px;
+  /* top: var(--headerHight); */
   z-index: 2;
   background-color: var(--kkBg);
   text-transform: uppercase;
@@ -495,12 +496,24 @@ img.modal {
   font-weight: bolder;
   font-family: var(--primaryFont);
   cursor: pointer;
+  padding: 0;
+  margin: 0;
 }
 
 .infoProductCart {
   display: flex;
-  justify-content: space-between;
-  width: 60%;
+  width: 85%;
+  align-items: center;
+}
+
+.infoProductCart .texto {
+  margin-left: 0.2rem;
+}
+
+.infoProductCart .price-each {
+  justify-self: flex-end;
+  margin: 0;
+  margin-left: auto;
 }
 
 .cart-item label {
@@ -515,11 +528,13 @@ img.modal {
 
 .cartWrapper .plus-minus button {
   border: solid 1px black;
+  padding: 0;
   font-size: 1.5rem;
   text-align: center;
   cursor: pointer;
   background-color: var(--kkTahini);
   width: 40px;
+  margin-bottom: 0;
 }
 
 .cartWrapper input.qty {

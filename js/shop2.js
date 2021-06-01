@@ -299,6 +299,7 @@ function slidder() {
   phoneCustomer = document.querySelector("#phone").value;
   document.querySelector(".formsWrapper").classList.toggle("slide");
   document.querySelector("#nextBtnCC").addEventListener("click", popUPyouRock);
+  document.querySelector("#nextBtnCC").addEventListener("click", closeModal);
   searchCustomer();
 }
 

@@ -16,7 +16,12 @@ if (cartLenght < 3) {
 }
 // console.log(cartLenght);
 
-document.querySelector(".cartItemsCounter").classList.add("hideCartCounter");
+document
+  .querySelector(".desktopHeader .cartItemsCounter")
+  .classList.add("hideCartCounter");
+document
+  .querySelector(".mobileHeader .cartItemsCounter")
+  .classList.add("hideCartCounter");
 
 // console.log(localStorage);
 
@@ -197,14 +202,24 @@ function logCartCounting() {
   if ((cartItems < 1) | (cartItems == null)) {
     cartItems = 0;
     document
-      .querySelector(".cartItemsCounter")
+      .querySelector(".desktopHeader .cartItemsCounter")
+      .classList.add("hideCartCounter");
+    document
+      .querySelector(".mobileHeader .cartItemsCounter")
       .classList.add("hideCartCounter");
     document.querySelector(".totalPrice").textContent = 0;
   } else {
-    document.querySelector(".cartItemsCounter p").textContent = cartItems;
+    document.querySelector(".desktopHeader .cartItemsCounter p").textContent =
+      cartItems;
+    document.querySelector(".mobileHeader .cartItemsCounter p").textContent =
+      cartItems;
     localStorage.setItem("cartItems", cartItems);
+
     document
-      .querySelector(".cartItemsCounter")
+      .querySelector(".desktopHeader .cartItemsCounter")
+      .classList.remove("hideCartCounter");
+    document
+      .querySelector(".mobileHeader .cartItemsCounter")
       .classList.remove("hideCartCounter");
   }
 }
