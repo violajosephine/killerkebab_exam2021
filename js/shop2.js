@@ -12,6 +12,10 @@ let allProducts;
 let comboI;
 let newComboId;
 let customerRock;
+let emailCustomer;
+let idCustomer;
+let nameCustomer;
+let phoneCustomer;
 
 //eventListeners
 window.addEventListener("load", fetchProductList);
@@ -278,12 +282,15 @@ function popUpInfo() {
 
 function slidder() {
   console.log("slidder");
-  customer = document.querySelector("#name").value;
-  customerRock = customer.split(" ")[0];
+  nameCustomer = document.querySelector("#name").value;
+  customerRock = nameCustomer.split(" ")[0];
   document.querySelector(".customerName").textContent = customerRock;
-  document.querySelector("#nameCC").value = customer;
+  document.querySelector("#nameCC").value = nameCustomer;
+  emailCustomer = document.querySelector("#email").value;
+  phoneCustomer = document.querySelector("#phone").value;
   document.querySelector(".formsWrapper").classList.toggle("slide");
   document.querySelector("#nextBtnCC").addEventListener("click", popUPyouRock);
+  searchCustomer();
 }
 
 function popUPyouRock() {
@@ -345,6 +352,58 @@ function cursorHand() {
       cursorMain.style.display = "none";
     });
   });
+}
+/*------------------------------serch/post customer by email-------*/
+
+function searchCustomer() {
+  console.log("search");
+  const urlSearchCutomer = `https://reicpe-9cc2.restdb.io/rest/killer-kebab-customers?q={"email":"${emailCustomer}"}`;
+
+  fetch(urlSearchCutomer, {
+    method: "GET",
+    headers: {
+      "x-apikey": "606d5dcef5535004310074f4",
+    },
+  })
+    .then((res) => res.json())
+    .then((response) => {
+      console.log(response);
+      if (response.length < 1) {
+        postCustomer();
+      } else {
+        console.log(response[0]._id);
+        idCustomer = response._id;
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
+  function postCustomer() {
+    const payload = {
+      name: nameCustomer,
+      email: emailCustomer,
+      telephoneNo: phoneCustomer,
+    };
+
+    fetch("https://reicpe-9cc2.restdb.io/rest/killer-kebab-customers", {
+      method: "POST",
+      headers: {
+        "x-apikey": "606d5dcef5535004310074f4",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => {
+        console.log(response);
+        console.log("newCustomer");
+        console.log(response._id);
+        searchCustomer();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 }
 
 /*---------------------------------post order-------------------*/
