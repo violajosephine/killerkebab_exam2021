@@ -406,6 +406,7 @@ function searchCustomer() {
       },
       body: JSON.stringify(payload),
     })
+      .then((res) => res.json())
       .then((response) => {
         console.log(response);
         console.log("newCustomer");
