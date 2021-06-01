@@ -162,7 +162,7 @@ function showProductList(products) {
 
 function showMenu() {
   console.log("showMenu");
-  document.querySelector("  #filter ").classList.toggle("appear");
+  document.querySelector("#filter").classList.toggle("appear");
 }
 
 /*--------------------------------------------------------*/
