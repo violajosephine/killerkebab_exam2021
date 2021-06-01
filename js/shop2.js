@@ -300,6 +300,7 @@ function slidder() {
   emailCustomer = document.querySelector("#email").value;
   phoneCustomer = document.querySelector("#phone").value;
   document.querySelector(".formsWrapper").classList.toggle("slide");
+  document.querySelector("#nextBtnCC").addEventListener("click", postOrder); // <= check if works
   document.querySelector("#nextBtnCC").addEventListener("click", popUPyouRock);
   document.querySelector("#nextBtnCC").addEventListener("click", closeModal);
   searchCustomer();
@@ -311,7 +312,10 @@ function popUPyouRock() {
   const copy = template.cloneNode(true);
   //adjust stuff
   copy.querySelector(".name").textContent = customerRock;
-  copy.querySelector(".black .nextBtn").addEventListener("click", postOrder);
+  // copy.querySelector(".black .nextBtn").addEventListener("click", postOrder);
+  copy.querySelector(".black .nextBtn").addEventListener("click", () => {
+    location.href = `index.html`;
+  });
 
   //append
   document.querySelector("main").appendChild(copy);
@@ -384,7 +388,7 @@ function searchCustomer() {
         postCustomer();
       } else {
         console.log(response[0]._id);
-        idCustomer = response._id;
+        idCustomer = response[0]._id;
       }
     })
     .catch((err) => {
@@ -406,12 +410,13 @@ function searchCustomer() {
       },
       body: JSON.stringify(payload),
     })
-      .then((res) => res.json())
+      .then((res) => res.json()) // <= it was necessary
       .then((response) => {
         console.log(response);
         console.log("newCustomer");
         console.log(response._id);
-        searchCustomer();
+        idCustomer = response._id;
+        // searchCustomer();
       })
       .catch((err) => {
         console.error(err);
@@ -423,7 +428,9 @@ function searchCustomer() {
 
 function postOrder() {
   console.log("postOrder");
+  console.log(idCustomer);
   const payload = {
+    customer: idCustomer,
     cart: JSON.parse(localStorage.getItem("orderKK")),
     payed: true,
     pickedUp: false,
@@ -437,10 +444,11 @@ function postOrder() {
     },
     body: JSON.stringify(payload),
   })
+    .then((res) => res.json())
     .then((response) => {
       console.log(response);
       localStorage.setItem("orderKK", []);
-      location.href = `index.html`;
+      // location.href = `index.html`;
     })
     .catch((err) => {
       console.error(err);
