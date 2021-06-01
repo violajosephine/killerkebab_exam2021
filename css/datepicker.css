@@ -79,8 +79,8 @@ p {
   cursor: pointer;
 }
 
-#takeawayOptions,
-#dateTimeOptions,
+.takeawayOptions,
+.dateTimeOptions,
 #basketInfo {
   display: flex;
   flex-direction: column;
@@ -111,6 +111,13 @@ p {
   justify-content: center;
   align-content: center;
   top: 8em;
+}
+
+.desktopHeader .modalWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
 
 form {

@@ -15,7 +15,7 @@
       <header>
         <div class="mobileHeader">
         <div class="logo">
-          <a href="products.html"
+          <a href="index.html"
             ><img
               src="assets/handmobile.svg"
               alt="peace sign next to written killer kebab"
@@ -31,16 +31,16 @@
         </div>
         <div id="orderView">
           <div class="options">
-            <div id="takeawayOptions">
+            <div class="takeawayOptions">
               <div id="takeawayIcon"></div>
               <p>PICK-UP</p>
             </div>
-            <div id="dateTimeOptions">
+            <div class="dateTimeOptions">
               <div id="dateIcon"></div>
-              <p>TODAY</p>
+              <p class="dateP">TODAY</p>
               <p class="time">SOON</p>
             </div>
-            <div id="basketInfo">
+            <div class="basketInfo">
             <div class="basket">
               <div class="cartItemsCounter"><p></p></div>  
               
@@ -51,7 +51,7 @@
             <div id="filterIcon"></div>
           </div>
           </div>
-          <div id="optionsTakeaway" class="hidden">
+          <div class="optionsTakeaway hidden">
             <div class="modalWrapper">
               <div class="optionsModal">
                 <div class="exit"><img src="assets/exit.svg" alt="" /></div>
@@ -64,13 +64,13 @@
               </div>
             </div>
           </div>
-          <div id="optionsDate" class="hidden">
+          <div class="optionsDate hidden">
             <div class="modalWrapper">
               <div class="dateModal">
                 <div class="exitDate"><img src="assets/exit.svg" alt="" /></div>
                 <h1>When you want to pick up your order?</h1>
                 <div class="form">
-                  <form id="dateForm" action="datepicker.html">
+                  <form id="dateForm" action="products.html">
                     <label for="pickuptime">Select date and time:</label>
                     <input
                       class="dateselection"
@@ -96,7 +96,7 @@
       <div class="desktopHeader">
         <div class="headerWrapper">
         <div class="logo">
-          <a href="products.html"
+          <a href="index.html"
             ><img
               src="assets/handmobile.svg"
               alt="peace sign next to written killer kebab"
@@ -112,16 +112,16 @@
         </div>
         <div id="orderView">
           <div class="options">
-            <div id="takeawayOptions">
+            <div class="takeawayOptions">
               <div id="takeawayIcon"></div>
               <p>PICK-UP</p>
             </div>
-            <div id="dateTimeOptions">
+            <div class="dateTimeOptions">
               <div id="dateIcon"></div>
-              <p>TODAY</p>
+              <p class="dateP">TODAY</p>
               <p class="time">SOON</p>
             </div>
-            <div id="basketInfo">
+            <div class="basketInfo">
             <div class="basket">
               <div class="cartItemsCounter"><p></p></div>  
               
@@ -129,7 +129,7 @@
             <p><span class="totalPrice"></span> kr.</p> 
           </div>
           </div>
-          <div id="optionsTakeaway" class="hidden">
+          <div class="optionsTakeaway hidden">
             <div class="modalWrapper">
               <div class="optionsModal">
                 <div class="exit"><img src="assets/exit.svg" alt="" /></div>
@@ -142,13 +142,13 @@
               </div>
             </div>
           </div>
-          <div id="optionsDate" class="hidden">
+          <div class="optionsDate hidden">
             <div class="modalWrapper">
               <div class="dateModal">
                 <div class="exitDate"><img src="assets/exit.svg" alt="" /></div>
                 <h1>When you want to pick up your order?</h1>
                 <div class="form">
-                  <form id="dateForm" action="datepicker.html">
+                  <form id="dateForm" action="products.html">
                     <label for="pickuptime">Select date and time:</label>
                     <input
                       class="dateselection"
@@ -439,7 +439,7 @@
       <div class="modal-content info-payment">
         <div class="formsWrapper">
 
-    <form class="form-personalData" id="personalData" name="personalData" autocomplete="on">
+    <form class="form-personalData" id="personalData" name="personalData" autocomplete="on" data-netlify="true">
       <div class="time-headline">
         <h2>PERSONAL</br>INFORMATION</h2>
         <h3>Pick Up <span class="date">date:</span> <span class="time">time:</span></h3>
