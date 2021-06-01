@@ -17,6 +17,7 @@ window.addEventListener("load", fetchProductList);
 document
   .querySelector("#categoryFilter")
   .addEventListener("change", fetchProductFilter);
+document.querySelector("#filterOptions").addEventListener("click", showMenu);
 
 //-----------ifs---------
 
@@ -157,6 +158,14 @@ function showProductList(products) {
 
 /*--------------------------------------------------------*/
 
+//showing filter options in mobile header
+
+function showMenu() {
+  console.log("showMenu");
+  document.querySelector("#filter").classList.toggle("appear");
+}
+
+/*--------------------------------------------------------*/
 //activate the plus button for soft dirnks after chossing one
 function soda() {
   let btnSoda =

@@ -48,11 +48,11 @@ p {
 
 .options {
   display: flex;
-  padding: 3em;
+  padding: 2em 0;
   align-items: flex-start;
 }
 .options > div {
-  margin-left: 2em;
+  margin: 0 2em;
 }
 
 #takeawayIcon {
@@ -61,7 +61,6 @@ p {
   width: 3vw;
   height: 3vw;
   cursor: pointer;
-  margin-bottom: 0.5em;
 }
 
 #dateIcon {
@@ -70,15 +69,24 @@ p {
   width: 3vw;
   height: 3vw;
   cursor: pointer;
-  margin-bottom: 0.5em;
+}
+
+#filterIcon {
+  background-image: url(/assets/filter.svg);
+  background-size: cover;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
 }
 
 #takeawayOptions,
-#dateTimeOptions {
+#dateTimeOptions,
+#basketInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #000;
 }
 
 .optionsModal,
