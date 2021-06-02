@@ -3,6 +3,8 @@ const categories = ["killer kombo", "killers", "sides", "drinks", "dips"];
 const extraForBeer = 10;
 let KKcategory = urlParams.get("category");
 let comboSide = urlParams.get("side");
+const dateTimeX = urlParams.get("pickupdate");
+const timeTimeX = urlParams.get("pickuptime");
 let comboDrink;
 let comboDip;
 let urlFetch;
@@ -16,6 +18,8 @@ let emailCustomer;
 let idCustomer;
 let nameCustomer;
 let phoneCustomer;
+let orderDate;
+let orderTime;
 
 //eventListeners
 window.addEventListener("load", fetchProductList);
@@ -50,6 +54,12 @@ if ((KKcategory == "all") | !KKcategory) {
 if (comboSide) {
   console.log(comboSide);
   addComboProducts();
+}
+
+if (dateTimeX) {
+  orderDate = dateTimeX;
+  orderTime = timeTimeX;
+  console.log(orderTime + orderDate);
 }
 
 /*------------------------------------------------*/
@@ -433,6 +443,8 @@ function postOrder() {
     customer: idCustomer,
     cart: JSON.parse(localStorage.getItem("orderKK")),
     payed: true,
+    dateO: orderDate,
+    timeO: orderTime,
     pickedUp: false,
   };
 
@@ -453,4 +465,65 @@ function postOrder() {
     .catch((err) => {
       console.error(err);
     });
+}
+
+/*--------------calc min date and time------------------------*/
+
+function calcToday() {
+  const month = {
+    Jan: "01",
+    Feb: "02",
+    Mar: "03",
+    Abr: "04",
+    May: "05",
+    Jun: "06",
+    Jul: "07",
+    Aug: "08",
+    Sep: "09",
+    Oct: "10",
+    Nov: "11",
+    Dec: "12",
+  };
+  d = new Date().toString().split(" ");
+
+  /*--- min date----*/
+  minMonth = month[d[1]];
+  minDay = d[2];
+  minYear = d[3];
+  console.log(d);
+  minDate = `${minYear}-${minMonth}-${minDay}`;
+  document.querySelectorAll(`.dateselection`).forEach((e) => {
+    e.setAttribute("min", minDate);
+    e.value = minDate;
+    e.addEventListener("change", anotherDay);
+  });
+  /*-----min time---*/
+  minTime = d[4].split(":");
+  minHour = Number(minTime[0]);
+  minMinute = Number(minTime[1]) + 40;
+  if (minMinute > 60) {
+    minHour = minHour + 1;
+    minMinute = minMinute - 60;
+  }
+  if (minMinute < 10) {
+    minMinute = "0" + minMinute;
+  }
+  console.log(minHour + ":" + minMinute);
+  minTime = minHour + ":" + minMinute;
+  document.querySelectorAll(".timeselection").forEach((e) => {
+    e.setAttribute("min", minTime);
+    e.setAttribute("max", "20:10");
+    e.value = minTime;
+  });
+}
+
+function anotherDay() {
+  if (this.value != this.min) {
+    document.querySelectorAll(".timeselection").forEach((e) => {
+      e.setAttribute("min", "12:40");
+      e.value = "12:40";
+    });
+  } else {
+    calcToday();
+  }
 }

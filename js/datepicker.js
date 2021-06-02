@@ -1,7 +1,7 @@
 const urlInfo = new URLSearchParams(window.location.search);
 
-const dateTime = urlInfo.get("pickuptime");
-const timeTime = urlInfo.get("pickupdate");
+const timeTime = urlInfo.get("pickuptime");
+const dateTime = urlInfo.get("pickupdate");
 
 if (dateTime) {
   document.querySelectorAll(".dateP").forEach((e) => {
@@ -45,6 +45,7 @@ function dateModal() {
   document.querySelectorAll(".exitDate").forEach((e) => {
     e.addEventListener("click", exitWindowDate);
   });
+  calcToday();
 }
 
 function exitWindow() {
