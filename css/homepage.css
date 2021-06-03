@@ -11,6 +11,10 @@ button {
   cursor: pointer;
 }
 
+img {
+  object-fit: cover;
+}
+
 h1 {
   font-family: var(--primaryFont);
   font-size: 2.5em;
@@ -47,8 +51,16 @@ h1 {
   }
 }
 /* FIRST SECTION */
+
+.heroWrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
 .hero img {
   width: 100%;
+  height: calc(100vh - 8em);
+  object-fit: cover;
 }
 
 .options {
@@ -312,10 +324,16 @@ section.menu h1 {
 
 .findUs {
   background-color: var(--kkRed);
-  padding: 3em 10em;
+  /* padding: 3em 10em; */
+  padding-top: 2rem;
+}
+.findUs article {
+  margin-top: 3rem;
 }
 .findUs h1 {
   color: #fff;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 .findUsWrapper {
   display: flex;
@@ -336,6 +354,7 @@ section.menu h1 {
   font-family: var(--secondaryFont);
   color: #fff;
   margin: 0.5em 0 1.5em 0;
+  max-width: 70%;
 }
 
 .hashtag,
@@ -345,8 +364,27 @@ section.menu h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 45%;
+  width: 100%;
 }
+
+.location-hours {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+}
+
+.hours {
+  width: 30%;
+}
+.location {
+  width: 55%;
+  min-width: 350px;
+}
+
 .hashtag p,
 .tunes p,
 .location p,
@@ -356,11 +394,13 @@ section.menu h1 {
 }
 .igGallery {
   display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .igGallery img {
-  width: 100px;
-  margin-left: 0.5em;
+  width: 20%;
+  /* margin-left: 0.5em; */
 }
 
 .tunes img {
@@ -368,7 +408,8 @@ section.menu h1 {
 }
 
 .location img {
-  width: 70%;
+  width: 100%;
+  display: none;
 }
 
 .hours {
@@ -385,16 +426,113 @@ section.menu h1 {
   font-family: var(--thirdFont);
 }
 
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 60%;
+  height: 0;
+}
+.mapWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.spotifyBanner {
+  margin-bottom: 2rem;
+}
+
+/*----------------popUp-----------*/
+.modalWrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.optionsModal {
+  width: 80%;
+  max-width: 600px;
+  height: 50%;
+  max-height: 800px;
+  color: black;
+  background-color: var(--kkBg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  position: relative;
+}
+
+.optionsModal :is(h1, h2) {
+  font-family: var(--primaryFont);
+  color: var(--kkRed);
+  text-transform: uppercase;
+  font-size: calc(1.2rem + 1vw);
+  font-weight: 400;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.optionsModal h1 {
+  font-size: calc(1.5rem + 1.5vw);
+}
+
+.optionsModal p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.btnWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+.btnWrapper button:hover {
+  font-weight: 600;
+}
+
+.exit {
+  border: none;
+  /* background-color: rgb(36, 35, 35); */
+  color: white;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+}
+
+.exit:hover {
+  transform: scale(1.15);
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 768px) {
+  h1 {
+    margin-bottom: 1rem;
+  }
+
   .options {
     right: 0;
     margin: auto;
     width: 100%;
   }
   .vibe {
-    margin-top: 10em;
+    /* margin-top: 10em; */
     padding: 0ex;
   }
   .vibeWrapper {
@@ -425,6 +563,9 @@ section.menu h1 {
     width: 100%;
     padding: 0;
     margin-bottom: 3em;
+  }
+  .collaborator img {
+    width: 100%;
   }
 
   .collaborator h2 {
@@ -468,14 +609,24 @@ section.menu h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
   .findUsWrapper article {
     margin-left: 0;
   }
 
-  .igGallery img {
-    width: 140px;
+  .location-hours {
+    width: 100%;
   }
+
+  .mapKK {
+    width: 100%;
+    height: 20vh;
+  }
+
+  /* .igGallery img {
+    width: 140px;
+  } */
 
   .hashtag,
   .tunes,
@@ -489,5 +640,9 @@ section.menu h1 {
   .location p,
   .hours p {
     width: 130%;
+  }
+
+  .btnWrapper a + a {
+    margin-top: 2rem;
   }
 }

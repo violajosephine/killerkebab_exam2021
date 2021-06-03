@@ -7,6 +7,13 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navLink = document.querySelectorAll(".nav-link");
 
+document.querySelector(".modalWrapper .exit").addEventListener("click", hidden);
+document.querySelector(".options button").addEventListener("click", hidden);
+
+function hidden() {
+  document.querySelector(".optionsTakeaway").classList.toggle("hidden");
+}
+
 hamburger.addEventListener("click", mobileMenu);
 navLink.forEach((n) => n.addEventListener("click", closeMenu));
 
