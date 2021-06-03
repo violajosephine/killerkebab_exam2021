@@ -23,6 +23,7 @@ let orderTime;
 
 //eventListeners
 window.addEventListener("load", fetchProductList);
+window.addEventListener("load", calcToday);
 document
   .querySelector("#categoryFilter")
   .addEventListener("change", fetchProductFilter);

@@ -13,86 +13,7 @@
   <body id="productPage" class="productsKK">
     <div class="pageWrapper">
       <header>
-        <div class="mobileHeader">
-        <div class="logo">
-          <a href="index.html"
-            ><img
-              src="assets/handmobile.svg"
-              alt="peace sign next to written killer kebab"
-          />
-          <img
-          src="assets/killermobile.svg"
-          alt="peace sign next to written killer kebab"
-      />
-      <img
-          src="assets/kebabmobile.svg"
-          alt="peace sign next to written killer kebab"
-      /></a>
-        </div>
-        <div id="orderView">
-          <div class="options">
-            <div class="takeawayOptions">
-              <div id="takeawayIcon"></div>
-              <p>PICK-UP</p>
-            </div>
-            <div class="dateTimeOptions">
-              <div id="dateIcon"></div>
-              <p class="dateP">TODAY</p>
-              <p class="time">SOON</p>
-            </div>
-            <div class="basketInfo">
-            <div class="basket">
-              <div class="cartItemsCounter"><p></p></div>  
-              
-            </div>
-            <p><span class="totalPrice"></span> kr.</p> 
-          </div>
-          <div id="filterOptions">
-            <div id="filterIcon"></div>
-          </div>
-          </div>
-          <div class="optionsTakeaway hidden">
-            <div class="modalWrapper">
-              <div class="optionsModal">
-                <div class="exit"><img src="assets/exit.svg" alt="" /></div>
-                <h1>Select delivery preference</h1>
-                <a href="product.html"><button>Pick-up</button></a>
-                <a
-                  href="https://wolt.com/en/dnk/lyngby-gentofte/restaurant/killerkebab"
-                  ><button>Delivery</button></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="optionsDate hidden">
-            <div class="modalWrapper">
-              <div class="dateModal">
-                <div class="exitDate"><img src="assets/exit.svg" alt="" /></div>
-                <h1>When you want to pick up your order?</h1>
-                <div class="form">
-                  <form id="dateForm" action="products.html">
-                    <label for="pickuptime">Select date and time:</label>
-                    <input
-                      class="dateselection"
-                      type="date"
-                      id="pickupdate"
-                      name="pickupdate"
-                    />
-                    <input
-                      class="timeselection"
-                      type="time"
-                      id="pickuptime"
-                      name="pickuptime"
-                    />
-                    <input type="submit" class="submit" />
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div> 
-      </div>   
+      
       <div class="desktopHeader">
         <div class="headerWrapper">
         <div class="logo">
@@ -110,7 +31,7 @@
           alt="peace sign next to written killer kebab"
       /></a>
         </div>
-        <div id="orderView">
+        <div class="orderView">
           <div class="options">
             <div class="takeawayOptions">
               <div id="takeawayIcon"></div>
@@ -129,48 +50,7 @@
             <p><span class="totalPrice"></span> kr.</p> 
           </div>
           </div>
-          <div class="optionsTakeaway hidden">
-            <div class="modalWrapper">
-              <div class="optionsModal">
-                <div class="exit"><img src="assets/exit.svg" alt="" /></div>
-                <h1>Select delivery preference</h1>
-                
-                <a href="product.html"><button>Pick-up</button></a>
-                <a
-                  href="https://wolt.com/en/dnk/lyngby-gentofte/restaurant/killerkebab"
-                  ><button>Delivery</button></a
-                >
-              
-              </div>
-            </div>
-          </div>
-          <div class="optionsDate hidden">
-            <div class="modalWrapper">
-              <div class="dateModal">
-                <div class="exitDate"><img src="assets/exit.svg" alt="" /></div>
-                <h1>When you want to pick up your order?</h1>
-                <div class="form">
-                  <form id="dateForm" action="products.html">
-                    <label for="pickuptime">Select date and time:</label>
-                    <input
-                      class="dateselection"
-                      type="date"
-                      id="pickupdate"
-                      name="pickupdate"
-                      min="today"
-                    />
-                    <input
-                      class="timeselection"
-                      type="time"
-                      id="pickuptime"
-                      name="pickuptime"
-                    />
-                    <input type="submit" class="submit" />
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+ 
 
         </div> 
       </div>
@@ -257,9 +137,56 @@
         </aside>     
         
       </div>
-     
+    </div> 
+
+
+    <div class="optionsTakeaway hidden">
+      <div class="modalWrapper">
+        <div class="optionsModal">
+          <div class="exit"><img src="assets/exit.svg" alt="" /></div>
+          <h1>Select delivery preference</h1>
+          
+          <a href="product.html"><button>Pick-up</button></a>
+          <a
+            href="https://wolt.com/en/dnk/lyngby-gentofte/restaurant/killerkebab"
+            ><button>Delivery</button></a
+          >
+        
+        </div>
+      </div>
+    </div>
+    
+      <div class="dateModalWrapper hidden">
+        <div class="dateModal">
+          <div class="exitDate"><img src="assets/exit.svg" alt="" /></div>
+          <h1>When you want to pick up your order?</h1>
+          <div class="form">
+            <form id="dateForm" action="products.html">
+              <label for="pickuptime">Select date and time:</label>
+              <input
+                class="dateselection"
+                type="date"
+                id="pickupdate"
+                name="pickupdate"
+                min="today"
+              />
+              <input
+                class="timeselection"
+                type="time"
+                id="pickuptime"
+                name="pickuptime"
+              />
+              <input type="submit" class="submit" />
+            </form>
+          </div>
+        </div>
+      </div>
     
 
+
+
+    
+<!-------templates----------->
     <template class="productSmallCard">
       <div class="smallCardContainer marginTop">
         
@@ -500,7 +427,7 @@
       </div>
     </div>
   </template>
-</div> 
+ 
     <footer>
       <div class="footerWrapper">
       <nav>

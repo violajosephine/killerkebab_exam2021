@@ -1,4 +1,144 @@
 /* GENERAL */
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --kkRed: #ad3919;
+  --kkBg: #f5f3e6;
+  --kkTahini: #eeb755;
+  --primaryFont: "Chelsea Market", cursive;
+  --secondaryFont: "Raleway", sans-serif;
+  --thirdFont: "Courier Prime", monospace;
+  --headerHight: 100px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--secondaryFont);
+  background-color: var(--kkBg);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.desktopHeader {
+  display: flex;
+  background-color: var(--kkBg);
+  padding: 2rem 4rem;
+  position: relative;
+  background-color: blueviolet; /*--important---*/
+}
+
+.headerWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: turquoise;
+}
+
+.logo {
+  display: flex;
+  margin-left: 4rem;
+}
+
+header .logo a {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: violet;
+}
+
+.logo img {
+  width: 80%;
+  object-fit: contain;
+}
+
+.logo img:first-child {
+  width: 60%;
+}
+/*--------------------*/
+
+.orderView {
+  /* position: relative; */
+}
+
+.options {
+  display: flex;
+  padding: 2em 0;
+  width: 100%;
+  align-items: flex-start;
+  background-color: yellow;
+}
+.options > div {
+  margin: 0;
+}
+
+#productPage #takeawayIcon {
+  background-image: url(../assets/loader.svg);
+  background-size: cover;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+}
+
+#productPage #dateIcon {
+  background-image: url(../assets/clock.svg);
+  background-size: cover;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+}
+
+p.time {
+  margin-top: -10px;
+}
+
+#takeawayIcon {
+  background-image: url(/assets/loader.svg);
+  background-size: cover;
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+}
+
+#dateIcon {
+  background-image: url(/assets/clock.svg);
+  background-size: cover;
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+}
+
+#filterIcon {
+  background-image: url(/assets/filter.svg);
+  background-size: cover;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+}
+
+.takeawayOptions,
+.dateTimeOptions,
+#basketInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
 button {
   font-family: var(--secondaryFont);
   color: #000;
@@ -40,53 +180,6 @@ p {
   font-family: var(--secondaryFont);
   font-size: 1.3em;
   text-align: center;
-}
-
-.orderView {
-  position: relative;
-}
-
-.options {
-  display: flex;
-  padding: 2em 0;
-  align-items: flex-start;
-}
-.options > div {
-  margin: 0 2em;
-}
-
-#takeawayIcon {
-  background-image: url(/assets/loader.svg);
-  background-size: cover;
-  width: 3vw;
-  height: 3vw;
-  cursor: pointer;
-}
-
-#dateIcon {
-  background-image: url(/assets/clock.svg);
-  background-size: cover;
-  width: 3vw;
-  height: 3vw;
-  cursor: pointer;
-}
-
-#filterIcon {
-  background-image: url(/assets/filter.svg);
-  background-size: cover;
-  width: 46px;
-  height: 46px;
-  cursor: pointer;
-}
-
-.takeawayOptions,
-.dateTimeOptions,
-#basketInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #000;
 }
 
 .optionsModal,
