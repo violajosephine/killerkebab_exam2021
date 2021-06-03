@@ -23,12 +23,15 @@ let orderTime;
 
 //eventListeners
 window.addEventListener("load", fetchProductList);
-window.addEventListener("load", calcToday);
 document
   .querySelector("#categoryFilter")
   .addEventListener("change", fetchProductFilter);
 document.querySelector("#filterOptions").addEventListener("click", showMenu);
 document.querySelector("#checkout-pay").addEventListener("click", popUpInfo);
+document.querySelector(".logo").addEventListener("click", () => {
+  localStorage.removeItem("KKpickUpDate");
+  localStorage.removeItem("KKpickUpTime");
+});
 
 //-----------ifs---------
 
@@ -57,13 +60,33 @@ if (comboSide) {
   addComboProducts();
 }
 
+if (!dateTimeX) {
+  if (!localStorage.getItem("KKpickUpTime")) {
+    window.addEventListener("load", calcToday);
+  } else {
+    document.querySelector(".dateModalWrapper").classList.add("hidden");
+    console.log(localStorage.getItem("KKpickUpDate"));
+    console.log(localStorage.getItem("KKpickUpTime"));
+    orderDate = localStorage.getItem("KKpickUpDate");
+    orderTime = localStorage.getItem("KKpickUpTime");
+    document.querySelector(".dateP").textContent = orderDate;
+    document.querySelector(".time").textContent = orderTime;
+  }
+} else {
+  document.querySelector(".dateModalWrapper").classList.add("hidden");
+}
+
 if (dateTimeX) {
   orderDate = dateTimeX;
   orderTime = timeTimeX;
+  localStorage.setItem("KKpickUpTime", timeTimeX);
+  localStorage.setItem("KKpickUpDate", dateTimeX);
   console.log(orderTime + orderDate);
 }
 
 /*------------------------------------------------*/
+
+/*---------------------------------------------------- */
 
 function creatSec(category) {
   //creating parent div for diferents categories of food
@@ -461,6 +484,8 @@ function postOrder() {
     .then((response) => {
       console.log(response);
       localStorage.setItem("orderKK", []);
+      localStorage.removeItem("KKpickUpTime");
+      localStorage.removeItem("KKpickUpDate");
       // location.href = `index.html`;
     })
     .catch((err) => {
@@ -498,6 +523,7 @@ function calcToday() {
     e.value = minDate;
     e.addEventListener("change", anotherDay);
   });
+  localStorage.setItem("KKpickUpDate", JSON.stringify(minDate));
   /*-----min time---*/
   minTime = d[4].split(":");
   minHour = Number(minTime[0]);
@@ -505,9 +531,15 @@ function calcToday() {
   if (minMinute > 60) {
     minHour = minHour + 1;
     minMinute = minMinute - 60;
+    // if (minHour >= 24) {
+    //   minHour = "00";
+    // }
   }
   if (minMinute < 10) {
     minMinute = "0" + minMinute;
+  }
+  if (minHour < 10) {
+    minHour = "0" + minHour;
   }
   console.log(minHour + ":" + minMinute);
   minTime = minHour + ":" + minMinute;
@@ -516,6 +548,7 @@ function calcToday() {
     e.setAttribute("max", "20:10");
     e.value = minTime;
   });
+  localStorage.setItem("KKpickUpTime", JSON.stringify(minTime));
 }
 
 function anotherDay() {

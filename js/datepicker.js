@@ -21,6 +21,8 @@ document.querySelectorAll(".dateTimeOptions").forEach((e) => {
   e.addEventListener("click", dateModal);
 });
 
+document.querySelector(".exitDate").addEventListener("click", exitWindowDate);
+
 function optionsModal() {
   console.log("function optionsModal()");
   document.querySelectorAll(".optionsDate").forEach((e) => {
@@ -39,7 +41,7 @@ function dateModal() {
   document.querySelectorAll(".optionsTakeaway").forEach((e) => {
     e.classList.add("hidden");
   });
-  document.querySelectorAll(".optionsDate").forEach((e) => {
+  document.querySelectorAll(".dateModalWrapper").forEach((e) => {
     e.classList.remove("hidden");
   });
   document.querySelectorAll(".exitDate").forEach((e) => {
@@ -53,14 +55,14 @@ function exitWindow() {
   document.querySelectorAll(".optionsTakeaway").forEach((e) => {
     e.classList.add("hidden");
   });
-  document.querySelectorAll(".optionsDate").forEach((e) => {
+  document.querySelectorAll(".dateModalWrapper").forEach((e) => {
     e.classList.add("hidden");
   });
 }
 
 function exitWindowDate() {
   console.log("function exitWindowDate");
-  document.querySelectorAll(".optionsDate").forEach((e) => {
+  document.querySelectorAll(".dateModalWrapper").forEach((e) => {
     e.classList.add("hidden");
   });
   document.querySelectorAll(".optionsTakeaway").forEach((e) => {

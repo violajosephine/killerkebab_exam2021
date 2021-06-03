@@ -8,6 +8,7 @@
   --secondaryFont: "Raleway", sans-serif;
   --thirdFont: "Courier Prime", monospace;
   --headerHight: 100px;
+  --widthIcon: 46px;
 }
 
 body {
@@ -34,14 +35,13 @@ input[type="number"] {
   background-color: var(--kkBg);
   padding: 2rem 4rem;
   position: relative;
-  background-color: blueviolet; /*--important---*/
+  background-color: var(--kkBg); /*--important---*/
 }
 
 .headerWrapper {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: turquoise;
 }
 
 .logo {
@@ -55,7 +55,6 @@ header .logo a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: violet;
 }
 
 .logo img {
@@ -70,35 +69,23 @@ header .logo a {
 
 .orderView {
   /* position: relative; */
+  width: 20vw;
+  min-width: 300px;
 }
 
 .options {
   display: flex;
-  padding: 2em 0;
+  padding: 2rem 0;
+  padding-left: 3rem;
+  /*---remove in media----*/
   width: 100%;
   align-items: flex-start;
-  background-color: yellow;
+  justify-content: space-between;
 }
 .options > div {
   margin: 0;
-}
-
-#productPage #takeawayIcon {
-  background-image: url(../assets/loader.svg);
-  background-size: cover;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  margin-bottom: 0.5em;
-}
-
-#productPage #dateIcon {
-  background-image: url(../assets/clock.svg);
-  background-size: cover;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  margin-bottom: 0.5em;
+  width: 20%;
+  min-width: 55px;
 }
 
 p.time {
@@ -108,30 +95,40 @@ p.time {
 #takeawayIcon {
   background-image: url(/assets/loader.svg);
   background-size: cover;
-  width: 3vw;
-  height: 3vw;
+  width: var(--widthIcon);
+  height: var(--widthIcon);
   cursor: pointer;
 }
 
 #dateIcon {
   background-image: url(/assets/clock.svg);
   background-size: cover;
-  width: 3vw;
-  height: 3vw;
+  width: var(--widthIcon);
+  height: var(--widthIcon);
   cursor: pointer;
 }
 
 #filterIcon {
   background-image: url(/assets/filter.svg);
   background-size: cover;
-  width: 46px;
-  height: 46px;
+  width: var(--widthIcon);
+  height: var(--widthIcon);
   cursor: pointer;
+}
+
+.basket {
+  background-image: url(../assets/bag.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: var(--widthIcon);
+  height: var(--widthIcon);
+  position: relative;
+  display: flex;
 }
 
 .takeawayOptions,
 .dateTimeOptions,
-#basketInfo {
+.basketInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,7 +161,7 @@ button:hover {
   color: #000;
 }
 
-.hidden {
+.toggleDisplay {
   display: none;
 }
 
@@ -195,21 +192,15 @@ p {
   margin-top: 7em;
 }
 
-.modalWrapper {
-  position: absolute;
+.dateModalWrapper {
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.438);
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-content: center;
-  top: 8em;
-}
-
-.desktopHeader .modalWrapper {
-  position: fixed;
   top: 0;
-  left: 0;
   z-index: 5;
 }
 
@@ -243,6 +234,44 @@ input[type="submit" i] {
   border: none;
   font-size: 1.1em;
 }
+
 input[type="submit" i]:hover {
   font-weight: 700;
+}
+
+#pickuptime {
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 1540px) {
+  .headerWrapper {
+    flex-wrap: wrap;
+  }
+  .logo {
+    margin-left: 0;
+  }
+  .options {
+    padding-left: 0;
+  }
+  .toggleDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .headerWrapper {
+    justify-content: center;
+  }
+
+  .dateModal {
+    width: 80%;
+  }
 }
