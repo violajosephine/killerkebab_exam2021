@@ -26,7 +26,7 @@ window.addEventListener("load", fetchProductList);
 document
   .querySelector("#categoryFilter")
   .addEventListener("change", fetchProductFilter);
-document.querySelector("#filterOptions").addEventListener("click", showMenu);
+// document.querySelector("#filterOptions").addEventListener("click", showMenu);
 document.querySelector("#checkout-pay").addEventListener("click", popUpInfo);
 document.querySelector(".logo").addEventListener("click", () => {
   localStorage.removeItem("KKpickUpDate");
@@ -132,7 +132,7 @@ function fetchProductList() {
 function fetchProductFilter(e) {
   let parent;
   const categoryValue = e.target.value;
-  location.href = `products.html?category=${categoryValue}`;
+  location.href = `products.html?category=${categoryValue}#startFetch`;
 }
 
 /*-----------------------------------------*/
@@ -200,10 +200,10 @@ function showProductList(products) {
 
 //showing filter options in mobile header
 
-function showMenu() {
-  console.log("showMenu");
-  document.querySelector("#filter").classList.toggle("appear");
-}
+// function showMenu() {
+//   console.log("showMenu");
+//   document.querySelector("#filter").classList.toggle("appear");
+// }
 
 /*--------------------------------------------------------*/
 //activate the plus button for soft dirnks after chossing one

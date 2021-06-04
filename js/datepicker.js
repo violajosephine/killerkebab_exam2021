@@ -15,6 +15,9 @@ if (dateTime) {
 
 if (window.innerWidth < 1540) {
   document.querySelector(".basketInfo").addEventListener("click", cartToggle);
+  document
+    .querySelector("#filterOptions")
+    .addEventListener("click", filterToggle);
 }
 
 document.querySelectorAll(".takeawayOptions").forEach((iconBtn) => {
@@ -76,4 +79,13 @@ function exitWindowDate() {
 
 function cartToggle() {
   document.querySelector("#cart").classList.toggle("appearCart");
+  document
+    .querySelector("#cart .btn-close")
+    .addEventListener("click", cartToggle);
+}
+function filterToggle() {
+  document.querySelector("#filter").classList.toggle("appearFilter");
+  document
+    .querySelector("#filter .btn-close")
+    .addEventListener("click", filterToggle);
 }
