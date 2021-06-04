@@ -864,6 +864,10 @@ footer img {
     padding: 2% 3vw;
   }
 
+  .black {
+    overflow-y: scroll;
+  }
+
   footer nav {
     display: flex;
     flex-direction: column;
