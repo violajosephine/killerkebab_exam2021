@@ -13,6 +13,10 @@ if (dateTime) {
   });
 }
 
+if (window.innerWidth < 1540) {
+  document.querySelector(".basketInfo").addEventListener("click", cartToggle);
+}
+
 document.querySelectorAll(".takeawayOptions").forEach((iconBtn) => {
   iconBtn.addEventListener("click", optionsModal);
 });
@@ -68,4 +72,8 @@ function exitWindowDate() {
   document.querySelectorAll(".optionsTakeaway").forEach((e) => {
     e.classList.add("hidden");
   });
+}
+
+function cartToggle() {
+  document.querySelector("#cart").classList.toggle("appearCart");
 }

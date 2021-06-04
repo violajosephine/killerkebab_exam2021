@@ -523,7 +523,7 @@ function calcToday() {
     e.value = minDate;
     e.addEventListener("change", anotherDay);
   });
-  localStorage.setItem("KKpickUpDate", JSON.stringify(minDate));
+  localStorage.setItem("KKpickUpDate", minDate);
   /*-----min time---*/
   minTime = d[4].split(":");
   minHour = Number(minTime[0]);
@@ -548,7 +548,7 @@ function calcToday() {
     e.setAttribute("max", "20:10");
     e.value = minTime;
   });
-  localStorage.setItem("KKpickUpTime", JSON.stringify(minTime));
+  localStorage.setItem("KKpickUpTime", minTime);
 }
 
 function anotherDay() {
