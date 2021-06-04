@@ -15,6 +15,9 @@ img {
   object-fit: cover;
 }
 
+video {
+  width: 100%;
+}
 h1 {
   font-family: var(--primaryFont);
   font-size: 2.5em;
