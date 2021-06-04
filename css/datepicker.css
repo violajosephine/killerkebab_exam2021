@@ -136,6 +136,13 @@ p.time {
   color: #000;
 }
 
+#dateForm input {
+  margin-bottom: 1em;
+  padding: 0.2rem;
+  font-size: 1.5rem;
+  font-family: var(--secondaryFont);
+}
+
 button {
   font-family: var(--secondaryFont);
   color: #000;

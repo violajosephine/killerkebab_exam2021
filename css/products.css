@@ -856,6 +856,14 @@ footer img {
     width: 90%;
   }
 
+  .modal-content.info-payment {
+    width: 92%;
+  }
+
+  .form-personalData {
+    padding: 2% 3vw;
+  }
+
   footer nav {
     display: flex;
     flex-direction: column;
