@@ -16,11 +16,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8em; /*check high of header*/
+}
+
 /* HEADER SETTINGS */
 
 header {
   width: 100%;
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   right: 0;
   background-color: var(--kkRed);
@@ -83,6 +88,7 @@ a {
   color: var(--kkTahini);
   font-weight: 600;
 }
+
 .logo {
   width: 150px;
 }
