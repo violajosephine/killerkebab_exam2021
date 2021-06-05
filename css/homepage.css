@@ -11,12 +11,14 @@ button {
   cursor: pointer;
 }
 
-img {
+img,
+video {
   object-fit: cover;
 }
 
 video {
   width: 100%;
+  /* height: 40vh; */
   opacity: 95%;
 }
 
