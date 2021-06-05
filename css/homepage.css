@@ -212,6 +212,11 @@ h1 {
   margin: 3em 0;
 }
 
+.different h1 {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
 .articlesWrapper {
   display: flex;
 }
