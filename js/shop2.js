@@ -147,7 +147,7 @@ function showProductList(products) {
     //adjust stuff
 
     copy.querySelector("h2").textContent = product.product;
-    copy.querySelector(".price").textContent = product.price;
+    copy.querySelector(".price").textContent = product.price + ",-";
     copy.querySelector("img").src = product.image + ".jpg";
     copy.querySelector("img").srcset = product.image + ".webp";
     copy.querySelector("img").alt = product.product;
