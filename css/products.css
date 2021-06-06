@@ -30,6 +30,18 @@ input[type="number"] {
 
 header {
   width: 100%;
+  /*----*/
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+aside {
+  position: fixed;
+  top: 35vh;
+}
+aside:last-child {
+  right: 0;
 }
 
 /* .mobileHeader {
@@ -52,6 +64,8 @@ header {
 
 .mainContainer {
   width: 100%;
+  /*-----*/
+  margin-top: 35vh;
 }
 
 main {
@@ -765,6 +779,10 @@ footer p {
 
 footer img {
   width: 50px;
+}
+
+:is(#conditions:checked) label {
+  transform: scale(2.5);
 }
 
 /*-----------------------*/
