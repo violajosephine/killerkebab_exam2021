@@ -355,7 +355,7 @@ section.menu h1 {
 .findUsWrapper {
   display: flex;
   flex-wrap: wrap;
-  background-color: blue;
+  /* background-color: blue; */
   align-items: flex-start;
 }
 
@@ -389,6 +389,7 @@ section.menu h1 {
   align-items: center;
   justify-content: center;
   width: 45%;
+  /* background-color: coral; */
 }
 
 .location-hours {
@@ -422,19 +423,21 @@ section.menu h1 {
   width: 100%;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .igGalleryLink {
   display: flex;
-  width: 50%;
+  width: 45%;
   max-width: 300px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  /* background-color: crimson; */
 }
 
 .igGallery img {
-  width: 90%;
+  width: 100%;
 
   /* margin-left: 0.5em; */
 }
