@@ -423,7 +423,6 @@ section.menu h1 {
   width: 100%;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 }
 
 .igGalleryLink {
@@ -432,6 +431,7 @@ section.menu h1 {
   max-width: 300px;
   justify-content: center;
   align-items: center;
+  padding: 5px;
   /* margin-bottom: 1rem; */
   /* background-color: crimson; */
 }
