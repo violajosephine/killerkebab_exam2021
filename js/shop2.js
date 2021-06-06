@@ -322,6 +322,11 @@ function popUpInfo() {
     .addEventListener("click", slidder);
   copy.querySelector("#CreditCard .backBtn").addEventListener("click", slidder);
 
+  copy.querySelector(".date").textContent +=
+    localStorage.getItem("KKpickUpDate");
+  copy.querySelector(".time").textContent +=
+    localStorage.getItem("KKpickUpTime");
+
   //append
   document.querySelector("main").appendChild(copy);
 }
