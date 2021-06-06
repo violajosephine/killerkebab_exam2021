@@ -32,10 +32,10 @@ document.querySelector(".exitDate").addEventListener("click", exitWindowDate);
 
 function optionsModal() {
   console.log("function optionsModal()");
-  document.querySelectorAll(".optionsDate").forEach((e) => {
-    e.classList.add("hidden");
-  });
-  document.querySelectorAll(".optionsTakeaway").forEach((e) => {
+  // document.querySelectorAll(".optionsDate").forEach((e) => {
+  //   e.classList.add("hidden");
+  // });
+  document.querySelectorAll(".optionsModalWrapper").forEach((e) => {
     e.classList.remove("hidden");
   });
   document.querySelectorAll(".exit").forEach((e) => {
@@ -59,12 +59,12 @@ function dateModal() {
 
 function exitWindow() {
   console.log("function exitWindow");
-  document.querySelectorAll(".optionsTakeaway").forEach((e) => {
+  document.querySelectorAll(".optionsModalWrapper").forEach((e) => {
     e.classList.add("hidden");
   });
-  document.querySelectorAll(".dateModalWrapper").forEach((e) => {
-    e.classList.add("hidden");
-  });
+  // document.querySelectorAll(".dateModalWrapper").forEach((e) => {
+  //   e.classList.add("hidden");
+  // });
 }
 
 function exitWindowDate() {

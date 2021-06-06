@@ -787,15 +787,17 @@ footer img {
     display: none;
   }
   #cart.appearCart {
-    display: block;
-    margin-right: 1em;
+    display: flex;
     position: fixed;
     z-index: 5;
     width: 100vw;
     height: 100vh;
     top: 0;
     background-color: #00000085;
-    padding-top: 20vh;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 20vh;
+    margin-right: 1em; */
   }
 
   .cartWrapper {
@@ -823,6 +825,7 @@ footer img {
 
   .filter {
     margin-left: 0;
+    width: 80%;
     max-width: 400px;
   }
 
@@ -882,12 +885,13 @@ footer img {
     font-weight: 800;
   }
 
-  .appearCart {
+  /* .appearCart {
     padding-top: 10vh;
-  }
+  } */
+
   .cartWrapper {
     margin: 0;
-    width: 90%;
+    width: 80%;
   }
 
   .modal-content.info-payment {
