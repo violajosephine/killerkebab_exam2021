@@ -148,7 +148,8 @@ function showProductList(products) {
 
     copy.querySelector("h2").textContent = product.product;
     copy.querySelector(".price").textContent = product.price;
-    copy.querySelector("img").src = product.image;
+    copy.querySelector("img").src = product.image + ".jpg";
+    copy.querySelector("img").srcset = product.image + ".webp";
     copy.querySelector("img").alt = product.product;
     copy.querySelector(".input-image").value = product.image;
     copy.querySelector(".category").value = product.category;
