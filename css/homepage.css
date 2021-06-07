@@ -1,4 +1,13 @@
+:root {
+  --kkRed: #ad3919;
+  --kkTahini: #eeb755;
+  --kkBg: #f5f3e6;
+  --primaryFont: "Chelsea Market", cursive;
+  --secondaryFont: "Raleway", sans-serif;
+  --thirdFont: "Courier Prime", monospace;
+}
 /* GENERAL */
+
 button {
   font-family: var(--secondaryFont);
   color: #000;
@@ -374,6 +383,7 @@ section.menu h1 {
   color: #fff;
   margin: 0.5em 0 1.5em 0;
   max-width: 70%;
+  font-size: 1.6rem;
 }
 
 /* .fiesta {
@@ -401,29 +411,44 @@ section.menu h1 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem;
+  margin-top: 3rem;
 }
 
 .location-hoursWrapper {
   display: flex;
-  /* background-color: brown; */
+  flex-wrap: wrap;
+  background-color: brown;
 }
 
 .hours {
   width: 30%;
+  background-color: yellow;
 }
-.location {
+article.location {
   width: 55%;
   min-width: 350px;
+  background-color: yellow;
+  margin-top: 0;
 }
 
 .hashtag p,
 .tunes p,
-.location p,
-.hours p {
+.location p {
   width: 60%;
   text-align: center;
   font-size: 1.6rem;
 }
+
+.hours p {
+  font-size: calc(1rem + 1vw);
+  max-width: 80%;
+  text-align: center;
+}
+
+.hours a {
+  color: var(--kkBg);
+}
+
 .igGallery {
   display: flex;
   flex-wrap: wrap;
@@ -563,6 +588,11 @@ section.menu h1 {
 
 .exit:hover {
   transform: scale(1.15);
+}
+
+.categoryWrapper button span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 
 /* MEDIA QUERIES */
