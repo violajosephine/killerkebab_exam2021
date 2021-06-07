@@ -396,10 +396,16 @@ section.menu h1 {
   width: 80%;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem;
+}
+
+.location-hoursWrapper {
+  display: flex;
+  /* background-color: brown; */
 }
 
 .hours {
