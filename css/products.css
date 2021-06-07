@@ -274,7 +274,7 @@ img.modal {
 
 .btn-close {
   border: none;
-  background-color: rgb(36, 35, 35);
+  background-color: transparent;
   color: white;
   padding: 0.5rem;
   position: absolute;

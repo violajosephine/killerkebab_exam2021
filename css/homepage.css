@@ -31,6 +31,10 @@ video {
   opacity: 95%;
 }
 
+img.heroBG {
+  display: none;
+}
+
 /* HOW TO MAKE THE BUTTON BE OPACITY ACTIVE */
 /* video:hover {
   opacity: 95%;
@@ -598,6 +602,13 @@ article.location {
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 768px) {
+  video.heroBG {
+    display: none;
+  }
+  img.heroBG {
+    display: block;
+  }
+
   h1 {
     margin-bottom: 1rem;
   }
