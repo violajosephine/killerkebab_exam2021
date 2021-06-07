@@ -417,18 +417,18 @@ section.menu h1 {
 .location-hoursWrapper {
   display: flex;
   flex-wrap: wrap;
-  background-color: brown;
 }
 
 .hours {
   width: 30%;
-  background-color: yellow;
 }
 article.location {
   width: 55%;
   min-width: 350px;
-  background-color: yellow;
   margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hashtag p,
@@ -689,6 +689,10 @@ article.location {
   }
   .findUsWrapper article {
     margin-left: 0;
+  }
+
+  article.location {
+    width: 100%;
   }
 
   .location-hours {
