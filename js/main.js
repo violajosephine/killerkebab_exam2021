@@ -1,8 +1,18 @@
-window.addEventListener("load", function () {
-  const loader = document.querySelector(".loader");
-  console.log(loader);
-  loader.className += " hidden";
-});
+// window.addEventListener("load", function () {
+//   const loader = document.querySelector(".loader");
+//   console.log(loader);
+//   loader.className += " hidden";
+// });
+const loader = document.querySelector(".loader");
+function removeLoader() {
+  loader.addEventListener("animationend", () => {
+    loader.remove();
+  });
+  loader.classList.add("banish");
+}
+
+setTimeout(removeLoader, 2000);
+
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navLink = document.querySelectorAll(".nav-link");

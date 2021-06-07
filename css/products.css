@@ -684,7 +684,7 @@ input[type="checkbox"] {
   color: white;
   font-size: calc(1.5rem + 0.5vw);
   font-family: var(--primaryFont);
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
 }
 
