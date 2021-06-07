@@ -781,11 +781,12 @@ button:hover {
     margin-top: 2rem;
   }
   .product {
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   .product img {
-    width: 80% !important;
+    width: 100% !important;
     max-height: 175px;
   }
 }
