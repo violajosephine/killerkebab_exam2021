@@ -156,8 +156,13 @@ button {
   margin-bottom: 1em;
 }
 
-button:hover {
-  font-weight: 700;
+.btnYellow {
+  border: solid 1px var(--kkTahini);
+}
+
+.btnYellow:hover {
+  background-color: black;
+  color: var(--kkTahini);
 }
 
 .exit,

@@ -616,10 +616,20 @@ img.modal {
   color: black;
   transition: 0.2s;
 }
+
+.nextBtn:hover {
+  transform: scale(1.1);
+}
+
 .backBtn {
   color: var(--kkTahini);
   background-color: black;
   position: relative;
+  transition: 0.2s;
+}
+
+.backBtn:hover {
+  transform: scale(1.1);
 }
 
 label.conditions {

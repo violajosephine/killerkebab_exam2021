@@ -18,7 +18,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 8em; /*check high of header*/
+  scroll-padding-top: 130px; /*check high of header*/
 }
 
 /* HEADER SETTINGS */

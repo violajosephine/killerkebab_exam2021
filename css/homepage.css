@@ -15,6 +15,7 @@ button {
   padding: 0.5em 1.2em;
   font-weight: 500;
   border: none;
+  border: solid 1px var(--kkTahini);
   text-transform: uppercase;
   font-size: 1.5em;
   cursor: pointer;
@@ -75,26 +76,64 @@ h1 {
   }
 }
 /* FIRST SECTION */
-
+.hero {
+  width: 100%;
+  height: calc(100vh - 136px);
+}
 .heroWrapper {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.hero img,
-.hero video {
+
+.heroVideoImgWrapper {
+  position: absolute;
   width: 100%;
-  height: calc(100vh - 8em);
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+.heroVideoImgWrapper :is(img, video) {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+
+.button-gif {
+  z-index: 1;
+  height: 80%;
+  width: 70%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.gifWrapper {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  background: radial-gradient(
+    circle,
+    rgba(5, 5, 5, 0.39) 0%,
+    rgba(246, 246, 247, 0) 80%
+  );
+}
+
+.gifWrapper img {
+  margin: 0;
+  width: 100%;
+  object-fit: contain;
 }
 
 .options {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  right: 20em;
-  bottom: 18em;
 }
 
 .options a {
@@ -575,8 +614,13 @@ article.location {
   flex-wrap: wrap;
 }
 
-.btnWrapper button:hover {
-  font-weight: 600;
+button:hover {
+  background-color: black;
+  color: var(--kkTahini);
+}
+
+.categoryWrapper button:hover {
+  color: black;
 }
 
 .exit {
