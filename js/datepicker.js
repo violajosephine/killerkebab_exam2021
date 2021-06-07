@@ -82,6 +82,7 @@ function cartToggle() {
   document
     .querySelector("#cart .btn-close")
     .addEventListener("click", cartToggle);
+  document.querySelector("#keepAdding").addEventListener("click", cartToggle);
 }
 function filterToggle() {
   document.querySelector("#filter").classList.toggle("appearFilter");

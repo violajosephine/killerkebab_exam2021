@@ -643,6 +643,11 @@ button:hover {
   text-orientation: mixed;
 }
 
+a:active {
+  font-weight: bolder;
+  color: blue;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 768px) {
@@ -662,6 +667,17 @@ button:hover {
     margin: auto;
     width: 100%;
   }
+
+  .product {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product img {
+    width: 100%;
+  }
+
   .vibe {
     /* margin-top: 10em; */
     padding: 0ex;

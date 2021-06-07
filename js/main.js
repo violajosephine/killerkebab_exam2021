@@ -1,11 +1,37 @@
-window.addEventListener("load", function () {
-  const loader = document.querySelector(".loader");
-  console.log(loader);
-  loader.className += " hidden";
-});
+// window.addEventListener("load", function () {
+//   const loader = document.querySelector(".loader");
+//   console.log(loader);
+//   loader.className += " hidden";
+// });
+let Y;
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navLink = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
+const sec1 = document.querySelector(".vibe");
+const sec2 = document.querySelector("#beer");
+
+sections.forEach((e) => {
+  console.log(e.offsetTop);
+});
+
+window.addEventListener("scroll", checkSection);
+
+function checkSection() {
+  Y = window.scrollY;
+}
+
+while (Y < sec1.offsetTop) {
+  console.log(sec1.offsetTop);
+}
+
+// if (
+//   (window.scrollY > sec1.offsetTop - 137) &
+//   (window.scrollY < sec1.offsetTop + 20)
+// ) {
+//   document.querySelector(`a[href="#${sec1.id}"]`).classList.add("activeBold");
+//   console.log(sec1.id);
+// }
 
 document.querySelector(".modalWrapper .exit").addEventListener("click", hidden);
 document.querySelectorAll(".takeaway").forEach((e) => {

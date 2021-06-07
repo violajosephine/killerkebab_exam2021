@@ -541,6 +541,10 @@ img.modal {
   opacity: 0;
 }
 
+#keepAdding {
+  display: none;
+}
+
 /*-----------------form info------------*/
 .form-personalData {
   width: 50%;
@@ -832,6 +836,10 @@ footer img {
     overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #keepAdding {
+    display: block;
   }
 
   #filter.appearFilter {
