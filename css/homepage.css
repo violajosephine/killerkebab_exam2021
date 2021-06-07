@@ -780,4 +780,11 @@ button:hover {
   .btnWrapper a + a {
     margin-top: 2rem;
   }
+  .product {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .product img {
+    width: 80% !important;
+  }
 }
