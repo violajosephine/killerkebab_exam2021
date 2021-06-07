@@ -29,7 +29,7 @@ header {
   top: 0;
   right: 0;
   background-color: var(--kkRed);
-  z-index: 80;
+  z-index: 8;
   padding: 2em 4em;
 }
 

@@ -416,6 +416,7 @@ section.menu h1 {
 .hours p {
   width: 60%;
   text-align: center;
+  font-size: 1.6rem;
 }
 .igGallery {
   display: flex;
